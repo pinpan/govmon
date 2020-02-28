@@ -1,0 +1,46 @@
+logging:
+    level:
+        ROOT: INFO
+        org.springframework: WARN
+        org.apache.catalina: WARN
+        org.springframework.boot.web.embedded.tomcat.TomcatWebServer: INFO
+
+spring:
+    application:
+        name: govmon
+    mvc:
+        throw-exception-if-no-handler-found: true
+    output:
+        ansi:
+            enabled: detect
+    jpa:
+        database-platform: org.hibernate.dialect.MySQLDialect
+    datasource:
+        url: jdbc:mysql://localhost:3306/govmon
+        username: moni
+        password: password
+    hibernate:
+        dialect: mysql
+
+monitor:
+    government:
+        mfcr:
+            server:
+                scheme: https
+                host: monitor.statnipokladna.cz
+                port:
+                path: /ucetni-jednotka
+
+servlet:
+    contextPath: /${spring.application.name}
+
+management:
+    endpoints:
+        web:
+            base-path: /application
+            exposure:
+                include: health,info,routes
+    health:
+        defaults:
+            enabled: false
+
