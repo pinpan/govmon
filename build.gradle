@@ -1,0 +1,165 @@
+buildscript {
+
+    ext {
+        springBootVersion = '2.2.4.RELEASE'
+        springBootGradleVersion =  '2.1.6.RELEASE'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+plugins {
+    id "org.springframework.boot" version "2.2.4.RELEASE"
+}
+
+ext {
+    springBootVersion = '2.2.4.RELEASE'
+    springBootGradleVersion =  '2.1.6.RELEASE'
+
+    sourceCompatibility = 11
+    targetCompatibility = 11
+
+    group = 'cz.gov.monitor'
+    appName = 'govmon'
+    version = '0.0.1-SNAPSHOT'
+
+    lombokVersion = '1.18.4'
+    slf4jVersion = '1.7.25'
+
+    javaxServletApiVersion = '3.1.0'
+    httpClientVersion = '4.5.3'
+    httpCoreVersion = '4.4.10'
+
+    logbackVersion = '1.2.3'
+    spring4Version = '5.1.13.RELEASE'
+    jacksonCoreVersion = "2.9.6"
+    springFoxVersion = '2.8.0'
+
+    junitVersion = '4.12'
+    mockitoCoreVersion = '2.15.0'
+    spring4Version = '4.3.7.RELEASE'
+    jsonPathVersion = '2.4.0'
+    springRetryVersion = '1.2.2.RELEASE'
+
+    libraries = [
+        slf4j_simple                       : "org.slf4j:slf4j-simple:${slf4jVersion}",
+        slf4j_api                          : "org.slf4j:slf4j-api:${slf4jVersion}",
+        logback_classic                    : "ch.qos.logback:logback-classic:${logbackVersion}",
+
+        //javax_servlet_api                  : "javax.servlet:javax.servlet-api:${javaxServletApiVersion}",
+
+        http_core                          : "org.apache.httpcomponents:httpcore:${httpCoreVersion}",
+        http_client                        : "org.apache.httpcomponents:httpclient:${httpClientVersion}",
+
+        spring4Mvc                         : "org.springframework:spring-webmvc:${spring4Version}",
+        spring4Test                        : "org.springframework:spring-test:${spring4Version}",
+
+        lombok                             : "org.projectlombok:lombok:${lombokVersion}",
+
+        //jaxb                               : "javax.xml.bind:jaxb-api:2.2.11",
+        jackson_core                       : "com.fasterxml.jackson.core:jackson-core:${jacksonCoreVersion}",
+        jackson_databind                   : "com.fasterxml.jackson.core:jackson-databind:${jacksonCoreVersion}",
+        jackson_annotations                : "com.fasterxml.jackson.core:jackson-annotations:${jacksonCoreVersion}",
+        jackson_dataformat_yaml            : "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:${jacksonCoreVersion}",
+        jackson_dataformat_xml            : "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:${jacksonCoreVersion}",
+
+        springFox                          : "io.springfox:springfox-swagger2:${springFoxVersion}",
+        springFoxSwaggerUI                 : "io.springfox:springfox-swagger-ui:${springFoxVersion}",
+        springFoxWeb                       : "io.springfox:springfox-spring-web:${springFoxVersion}",
+
+        junit                              : "junit:junit:${junitVersion}",
+        mockito_core                       : "org.mockito:mockito-core:${mockitoCoreVersion}",
+        spring4Test                        : "org.springframework:spring-test:${spring4Version}",
+        json_path                          : "com.jayway.jsonpath:json-path:${jsonPathVersion}",
+
+        spring_boot_gradle_plugin          : "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}",
+        spring_boot_starter                : "org.springframework.boot:spring-boot-starter:${springBootVersion}",
+        spring_boot_starter_actuator       : "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}",
+        spring_boot_starter_security       : "org.springframework.boot:spring-boot-starter-security:${springBootVersion}",
+        spring_boot_starter_web            : "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
+        spring_boot_starter_test           : "org.springframework.boot:spring-boot-starter-test:${springBootVersion}",
+        //spring_boot_starter_web_services   : "org.springframework.boot:spring-boot-starter-web-services:${springBootVersion}",
+        //spring_boot_configuration_processor: "org.springframework.boot:spring-boot-configuration-processor:${springBootVersion}",
+        //spring_boot_starter_aop            : "org.springframework.boot:spring-boot-starter-aop:${springBootVersion}",
+        //spring_boot_starter_log4j2         : "org.springframework.boot:spring-boot-starter-log4j2:${springBootVersion}",
+        //spring_boot_starter_thymeleaf      : "org.springframework.boot:spring-boot-starter-thymeleaf:${springBootVersion}",
+        //spring_boot_devtools               : "org.springframework.boot:spring-boot-devtools:${springBootVersion}",
+        spring_boot_starter_data_jpa       : "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}",
+        //spring_retry                       : "org.springframework.retry:spring-retry:${springRetryVersion}",
+        logback_classic                    : "ch.qos.logback:logback-classic:${logbackVersion}",
+        http_client                        : "org.apache.httpcomponents:httpclient:${httpClientVersion}",
+        mysql_driver                       : 'mysql:mysql-connector-java:8.0.13'
+    ]
+}
+
+
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+springBoot {
+    // This statement tells the Gradle Spring Boot plugin to generate a file
+    // build/resources/main/META-INF/build-info.properties that is picked up by Spring Boot to display
+    // via /info endpoint
+    buildInfo {
+        properties {
+            // Generate extra build info:
+            additionalProperties = [
+                    by: System.properties['user.name'],
+                    operatingSystem: "${System.properties['os.name']} (${System.properties['os.version']})",
+                    number: System.getenv('BUILD_NUMBER') ? System.getenv('BUILD_NUMBER') : "n/a",
+                    machine: InetAddress.localHost.hostName
+            ]
+        }
+    }
+}
+
+
+jar {
+    enabled = true
+    archiveBaseName = "${appName}"
+    archiveFileName = "${archiveBaseName}.thin.jar"
+}
+
+repositories {
+
+    mavenCentral()
+
+    mavenLocal()
+}
+
+
+dependencies {
+
+    compile libraries.spring_boot_starter
+    implementation libraries.spring_boot_starter_actuator
+    implementation libraries.spring_boot_starter_web
+    implementation libraries.spring_boot_starter_data_jpa
+
+    implementation libraries.logback_classic
+    implementation libraries.http_client
+    implementation libraries.http_core
+
+    implementation libraries.spring4Mvc
+    implementation libraries.jackson_databind
+    implementation libraries.jackson_dataformat_yaml
+    implementation libraries.jackson_dataformat_xml
+    //implementation libraries.jaxb
+
+    implementation libraries.springFox
+
+    compile         libraries.mysql_driver
+
+    implementation libraries.lombok
+    annotationProcessor libraries.lombok
+
+    testCompile libraries.junit
+    testCompile libraries.mockito_core
+    testCompile libraries.spring4Test
+    testCompile libraries.json_path
+    testCompile libraries.spring_boot_starter_test
+}
+
+
