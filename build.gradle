@@ -32,6 +32,7 @@ ext {
         mysql_driver                       : 'mysql:mysql-connector-java:8.0.13',
         lombok                             : "org.projectlombok:lombok:${lombokVersion}",
         springFox                          : "io.springfox:springfox-swagger2:${springFoxVersion}",
+        springFoxSwaggerUI                 : "io.springfox:springfox-swagger-ui:${springFoxVersion}",
         jaxb                               : "javax.xml.bind:jaxb-api:2.2.11",
         jackson_core                       : "com.fasterxml.jackson.core:jackson-core:${jacksonCoreVersion}",
 
@@ -91,6 +92,7 @@ dependencies {
 
     implementation libraries.http_client
     implementation libraries.springFox
+    implementation libraries.springFoxSwaggerUI
     implementation libraries.jaxb
     implementation libraries.jackson_core
     implementation libraries.mysql_driver
