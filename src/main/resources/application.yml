@@ -31,15 +31,15 @@ monitor:
                 organization: /ucetni-jednotka
                 report: /ucetni-zaverka/2
 
-servlet:
-    contextPath: /${spring.application.name}
+# servlet:
+#    contextPath: /${spring.application.name}
 
 management:
     endpoints:
         web:
             base-path: /application
             exposure:
-                include: health,info,routes
-    health:
-        defaults:
-            enabled: false
+                include: health,info,routes,auditevents,beans,caches,configprops,env,httptrace,logfile,loggers,liquibase,mappings,sessions
+    #health:
+    #    defaults:
+    #        enabled: false

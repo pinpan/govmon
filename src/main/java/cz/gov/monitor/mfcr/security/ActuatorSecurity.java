@@ -10,8 +10,8 @@ public class ActuatorSecurity extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        /*http.requestMatcher(EndpointRequest.toAnyEndpoint()).authorizeRequests((requests) ->
-                requests.anyRequest().hasRole("ENDPOINT_ADMIN"));*/
+        http.requestMatcher(EndpointRequest.toAnyEndpoint()).authorizeRequests((requests) ->
+                requests.anyRequest().permitAll()); /*hasRole("ENDPOINT_ADMIN"));*/
         http.httpBasic();
     }
 
