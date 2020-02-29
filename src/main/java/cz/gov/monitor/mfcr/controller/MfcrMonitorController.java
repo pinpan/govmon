@@ -19,7 +19,6 @@ import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
@@ -47,9 +46,9 @@ public class MfcrMonitorController {
     @ApiResponses( value = {
             @ApiResponse(code = 200, message = "Financial reports list of a organization for a given fiscal period.")
     })
-    public List<FinancialReport> getFinancialReport(@RequestParam(value = "ico", defaultValue = "00123456") String ico
+    public FinancialReport getFinancialReport(@RequestParam(value = "ico", defaultValue = "00123456") String ico
                                                    ,@RequestParam(value = "obdobi", defaultValue = "1909") String period
                                                     ) {
-        return monServ.fetchReports(ico, period);
+        return monServ.fetchReport(ico, period);
     }
 }

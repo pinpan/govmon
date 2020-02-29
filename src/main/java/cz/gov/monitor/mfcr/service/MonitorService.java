@@ -30,7 +30,7 @@ public class MonitorService {
     @Autowired
     private GovMonitorServerConfig govMonitorServerConfig;
 
-    public List<FinancialReport> fetchReports(String ico, String period) {
+    public FinancialReport fetchReport(String ico, String period) {
 
         StringBuilder sb = new StringBuilder(govMonitorServerConfig.serviceUrl("report"));
 
@@ -41,7 +41,10 @@ public class MonitorService {
         String serviceUrl = sb.toString();
 
         List<FinancialReport> financialReports = restClient.fetchFinancialReports(serviceUrl, financialReportTypeRef);
-        return financialReports;
+        // Here we expect just one report
+
+        return ((financialReports != null) && (0 < financialReports.size()))
+                ? financialReports.get(0) : null;
     }
 
     private static StringBuilder addQueryParams(StringBuilder sb, Map<String, String> queryParamsMap) {

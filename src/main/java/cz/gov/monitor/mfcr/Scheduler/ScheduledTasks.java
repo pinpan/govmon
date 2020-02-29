@@ -51,7 +51,7 @@ public class ScheduledTasks {
         Date dateTo = DateUtils.getFewDaysLater(new Date(), 30);
         log.info("Start-up clean check of expired reports. From %s, To: %s", dateFrom.toString(), dateTo.toString());
 
-        //List<FinancialReport> vns = service.fetchReports(dateFrom, dateTo);
+        //List<FinancialReport> vns = service.fetchReport(dateFrom, dateTo);
         //inboundReportsProcessor.processReports(vns);
     }
 }

@@ -25,8 +25,11 @@ monitor:
             server:
                 scheme: https
                 host: monitor.statnipokladna.cz
-                port: 443
+                port:
                 path: /api
+            paths:
+                organization: /ucetni-jednotka
+                report: /ucetni-zaverka/2
 
 servlet:
     contextPath: /${spring.application.name}

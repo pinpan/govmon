@@ -13,6 +13,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.Date;
 import java.util.List;
 
+import static junit.framework.TestCase.assertNotNull;
+import static junit.framework.TestCase.assertNull;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration
 @SpringBootTest
@@ -25,7 +28,11 @@ public class GovMonServiceTest {
     public void testFetch() {
         Date dateFrom = new Date();
         Date theDayAfterTommorow = DateUtils.getTwoDaysLater(new Date());
-        List<FinancialReport> reports = monitorService.fetchReports("44992785", "1909");
+        FinancialReport report = monitorService.fetchReport("44992785", "1909");
+
+        assertNotNull(report);
+        assertNotNull(report.getExpenses());
+        assertNotNull(report.getExpenses().size() > 10);
 
     }
 }
