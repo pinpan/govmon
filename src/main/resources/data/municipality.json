@@ -1,0 +1,1643 @@
+https://monitor.statnipokladna.cz/api/ucetni-zaverka/2?obdobi=1909&ic=44992785
+https://monitor.statnipokladna.cz/api/ucetni-zaverka/2?obdobi=1909&ic=44992785
+
+curl https://monitor.statnipokladna.cz/api/ucetni-zaverka/2?obdobi=1909&ic=44992785
+
+
+
+curl "https://monitor.statnipokladna.cz/api/vyhledavani?text=Brno" -H "Accept: application/json, text/plain, */*" -H "Referer: https://monitor.statnipokladna.cz/vyhledavani?text=Brno&type=0" -H "Accept-Language: cs"
+{
+  "page": {
+    "size": 30,
+    "totalElements": 500,
+    "totalPages": 17,
+    "pageNumber": 1
+  },
+  "data": [{
+    "ic": "00281174",
+    "name": "Obec ├Üsobrno",
+    "shortName": "├Üsobrno",
+    "population": 412,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Blansko",
+    "cofog": "K├│d nebyl p┼Öid─¢len",
+    "type": {
+      "id": 4,
+      "label": "Obec",
+      "area": "LOCAL"
+    },
+    "wordSimilarity": 0.600000024,
+    "exactMatch": true,
+    "searchPriority": 0
+  }, {
+    "ic": "44992785",
+    "name": "Statut├írn├¡ m─¢sto Brno",
+    "shortName": "Brno",
+    "population": 379527,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "K├│d nebyl p┼Öid─¢len",
+    "type": {
+      "id": 4,
+      "label": "Obec",
+      "area": "LOCAL"
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 0
+  }, {
+    "ic": "00026069",
+    "name": "Krajsk├⌐ st├ítn├¡ zastupitelstv├¡ Brno",
+    "shortName": "Krajsk├⌐ st├ítn├¡ zastupitelstv├¡ Brno",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "K├│d nebyl p┼Öid─¢len",
+    "type": {
+      "id": 1,
+      "label": "OSS",
+      "area": "STATE"
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 1
+  }, {
+    "ic": "00025062",
+    "name": "M─¢stsk├╜ soud Brno - m─¢sto",
+    "shortName": "M─¢stsk├╜ soud Brno - m─¢sto",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "K├│d nebyl p┼Öid─¢len",
+    "type": {
+      "id": 1,
+      "label": "OSS",
+      "area": "STATE"
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 1
+  }, {
+    "ic": "49467352",
+    "name": "Nejvy┼í┼í├¡ st├ítn├¡ zastupitelstv├¡ Brno",
+    "shortName": "Nejvy┼í┼í├¡ st├ítn├¡ zastupitelstv├¡ Brno",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "K├│d nebyl p┼Öid─¢len",
+    "type": {
+      "id": 1,
+      "label": "OSS",
+      "area": "STATE"
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 1
+  }, {
+    "ic": "00025071",
+    "name": "Okresn├¡ soud Brno - venkov",
+    "shortName": "Okresn├¡ soud Brno - venkov",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "K├│d nebyl p┼Öid─¢len",
+    "type": {
+      "id": 1,
+      "label": "OSS",
+      "area": "STATE"
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 1
+  }, {
+    "ic": "00209554",
+    "name": "├Ü┼Öad pr├íce Brno-m─¢sto",
+    "shortName": "├Ü┼Öad pr├íce Brno-m─¢sto",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "K├│d nebyl p┼Öid─¢len",
+    "type": {
+      "id": 1,
+      "label": "OSS",
+      "area": "STATE"
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 1
+  }, {
+    "ic": "00567167",
+    "name": "├Ü┼Öad pr├íce Brno - venkov",
+    "shortName": "├Ü┼Öad pr├íce Brno - venkov",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "K├│d nebyl p┼Öid─¢len",
+    "type": {
+      "id": 1,
+      "label": "OSS",
+      "area": "STATE"
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 1
+  }, {
+    "ic": "75045974",
+    "name": "Cyklistick├í stezka Brno - V├¡de┼ê",
+    "shortName": "Cyklistick├í stezka Brno - V├¡de┼ê",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - venkov",
+    "cofog": "K├│d nebyl p┼Öid─¢len",
+    "type": {
+      "id": 5,
+      "label": "DSO",
+      "area": "LOCAL"
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 5
+  }, {
+    "ic": "00345610",
+    "name": "Centrum d─¢tsk├╜ch odborn├╜ch zdravotnick├╜ch slu┼╛eb Brno, p┼Ö├¡sp─¢vkov├í organizace",
+    "shortName": "Centrum d─¢tsk├╜ch odborn├╜ch zdravotnick├╜ch slu┼╛eb Brno, p┼Ö├¡sp─¢vkov├í organizace",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "Ambulantn├¡ zdravotn├¡ p├⌐─ìe ostatn├¡",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "00209775",
+    "name": "Centrum kardiovaskul├írn├¡ a transplanta─ìn├¡ chirurgie Brno",
+    "shortName": "Centrum kardiovaskul├írn├¡ a transplanta─ìn├¡ chirurgie Brno",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "├Üstavn├¡ zdravotn├¡ p├⌐─ìe specializovan├í",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "00567256",
+    "name": "D─¢tsk├╜ diagnostick├╜ ├║stav, st┼Öedisko v├╜chovn├⌐ p├⌐─ìe, z├íkladn├¡ ┼íkola a ┼íkoln├¡ j├¡delna, Brno, Hlinky 140",
+    "shortName": "D─¢tsk├╜ diagnostick├╜ ├║stav, st┼Öedisko v├╜chovn├⌐ p├⌐─ìe, z├íkladn├¡ ┼íkola a ┼íkoln├¡ j├¡delna, Brno, Hlinky 140",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "Vedlej┼í├¡ slu┼╛by ve vzd─¢l├ív├ín├¡",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "62158465",
+    "name": "D─¢tsk├╜ domov Dagmar Brno, p┼Ö├¡sp─¢vkov├í organizace",
+    "shortName": "D─¢tsk├╜ domov Dagmar Brno, p┼Ö├¡sp─¢vkov├í organizace",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "Rodina a d─¢ti",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "70287406",
+    "name": "D─¢tsk├╜ domov Vranov, okres Brno-venkov",
+    "shortName": "D─¢tsk├╜ domov Vranov, okres Brno-venkov",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - venkov",
+    "cofog": "Rodina a d─¢ti",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "62158384",
+    "name": "Diagnostick├╜ ├║stav pro ml├íde┼╛, st┼Öedisko v├╜chovn├⌐ p├⌐─ìe a ┼íkoln├¡ j├¡delna, Brno, Vesla┼Ösk├í 246",
+    "shortName": "Diagnostick├╜ ├║stav pro ml├íde┼╛, st┼Öedisko v├╜chovn├⌐ p├⌐─ìe a ┼íkoln├¡ j├¡delna, Brno, Vesla┼Ösk├í 246",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "Rodina a d─¢ti",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "00567396",
+    "name": "Domov ml├íde┼╛e a Za┼Ö├¡zen├¡ ┼íkoln├¡ho stravov├ín├¡ Brno, p┼Ö├¡sp─¢vkov├í organizace",
+    "shortName": "Domov ml├íde┼╛e a Za┼Ö├¡zen├¡ ┼íkoln├¡ho stravov├ín├¡ Brno, p┼Ö├¡sp─¢vkov├í organizace",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "Vedlej┼í├¡ slu┼╛by ve vzd─¢l├ív├ín├¡",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "70915202",
+    "name": "D┼»m d─¢t├¡ a ml├íde┼╛e a ┼íkoln├¡ dru┼╛ina Oslavany, okres Brno - venkov, p┼Ö├¡sp─¢vkov├í organizace",
+    "shortName": "D┼»m d─¢t├¡ a ml├íde┼╛e a ┼íkoln├¡ dru┼╛ina Oslavany, okres Brno - venkov, p┼Ö├¡sp─¢vkov├í organizace",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - venkov",
+    "cofog": "Preprim├írn├¡ vzd─¢l├ív├ín├¡",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "44993412",
+    "name": "D┼»m d─¢t├¡ a ml├íde┼╛e Brno, Helceletova, p┼Ö├¡sp─¢vkov├í organizace",
+    "shortName": "D┼»m d─¢t├¡ a ml├íde┼╛e Brno, Helceletova, p┼Ö├¡sp─¢vkov├í organizace",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "Vedlej┼í├¡ slu┼╛by ve vzd─¢l├ív├ín├¡",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "44946929",
+    "name": "D┼»m d─¢t├¡ a ml├íde┼╛e Rosice, okres Brno - venkov",
+    "shortName": "D┼»m d─¢t├¡ a ml├íde┼╛e Rosice, okres Brno - venkov",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - venkov",
+    "cofog": "Vedlej┼í├¡ slu┼╛by ve vzd─¢l├ív├ín├¡",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "65269705",
+    "name": "Fakultn├¡ nemocnice Brno",
+    "shortName": "Fakultn├¡ nemocnice Brno",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "├Üstavn├¡ zdravotn├¡ p├⌐─ìe v┼íeobecn├í",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "00094897",
+    "name": "Filharmonie Brno, p┼Ö├¡sp─¢vkov├í organizace",
+    "shortName": "Filharmonie Brno, p┼Ö├¡sp─¢vkov├í organizace",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "Kulturn├¡ slu┼╛by",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "48513512",
+    "name": "Gymn├ízium Brno - ┼ÿe─ìkovice, p┼Ö├¡sp─¢vkov├í organizace",
+    "shortName": "Gymn├ízium Brno - ┼ÿe─ìkovice, p┼Ö├¡sp─¢vkov├í organizace",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "Vy┼í┼í├¡ sekund├írn├¡ vzd─¢l├ív├ín├¡",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "00558974",
+    "name": "Gymn├ízium Brno, Elgartova, p┼Ö├¡sp─¢vkov├í organizace",
+    "shortName": "Gymn├ízium Brno, Elgartova, p┼Ö├¡sp─¢vkov├í organizace",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "Vy┼í┼í├¡ sekund├írn├¡ vzd─¢l├ív├ín├¡",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "00558991",
+    "name": "Gymn├ízium Brno, K┼Öenov├í, p┼Ö├¡sp─¢vkov├í organizace",
+    "shortName": "Gymn├ízium Brno, K┼Öenov├í, p┼Ö├¡sp─¢vkov├í organizace",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "Vy┼í┼í├¡ sekund├írn├¡ vzd─¢l├ív├ín├¡",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "00559016",
+    "name": "Gymn├ízium Brno, Slovansk├⌐ n├ím─¢st├¡, p┼Ö├¡sp─¢vkov├í organizace",
+    "shortName": "Gymn├ízium Brno, Slovansk├⌐ n├ím─¢st├¡, p┼Ö├¡sp─¢vkov├í organizace",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "Vy┼í┼í├¡ sekund├írn├¡ vzd─¢l├ív├ín├¡",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "00559032",
+    "name": "Gymn├ízium Brno, t┼Ö├¡da Kapit├ína Jaro┼íe, p┼Ö├¡sp─¢vkov├í organizace",
+    "shortName": "Gymn├ízium Brno, t┼Ö├¡da Kapit├ína Jaro┼íe, p┼Ö├¡sp─¢vkov├í organizace",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "Vy┼í┼í├¡ sekund├írn├¡ vzd─¢l├ív├ín├¡",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "00558982",
+    "name": "Gymn├ízium Brno, V├¡de┼êsk├í, p┼Ö├¡sp─¢vkov├í organizace",
+    "shortName": "Gymn├ízium Brno, V├¡de┼êsk├í, p┼Ö├¡sp─¢vkov├í organizace",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "Vy┼í┼í├¡ sekund├írn├¡ vzd─¢l├ív├ín├¡",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "00559008",
+    "name": "Gymn├ízium Maty├í┼íe Lercha, Brno, ┼╜i┼╛kova 55, p┼Ö├¡sp─¢vkov├í organizace",
+    "shortName": "Gymn├ízium Maty├í┼íe Lercha, Brno, ┼╜i┼╛kova 55, p┼Ö├¡sp─¢vkov├í organizace",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "Vy┼í┼í├¡ sekund├írn├¡ vzd─¢l├ív├ín├¡",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }, {
+    "ic": "00101443",
+    "name": "Hv─¢zd├írna a planet├írium Brno, p┼Ö├¡sp─¢vkov├í organizace",
+    "shortName": "Hv─¢zd├írna a planet├írium Brno, p┼Ö├¡sp─¢vkov├í organizace",
+    "population": 0,
+    "region": {
+      "name": "Jihomoravsk├╜",
+      "fullname": "Jihomoravsk├╜ Kraj",
+      "nuts": "CZ064"
+    },
+    "county": "Brno - m─¢sto",
+    "cofog": "Aplikovan├╜ v├╜zkum a v├╜voj v oblasti rekreace, kultury a n├íbo┼╛enstv├¡",
+    "type": {
+      "id": 7,
+      "label": "P┼Ö├¡sp─¢vkov├í organizace",
+      "area": null
+    },
+    "wordSimilarity": 1.0,
+    "exactMatch": true,
+    "searchPriority": 7
+  }]
+}
+
+----------------------------
+curl "https://monitor.statnipokladna.cz/api/ucetni-jednotka/44992785" -H "Accept: application/json, text/plain, */*" -H "Referer: https://monitor.statnipokladna.cz/ucetni-jednotka/44992785/prehled" -H "Accept-Language: cs" -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+{
+  "ic":"44992785",
+  "name":"Statut├írn├¡ m─¢sto Brno",
+  "shortName":"Brno",
+  "nuts":"CZ0642",
+  "population":379527,
+  "region":{
+    "name":"Jihomoravsk├╜",
+    "fullname":"Jihomoravsk├╜ Kraj",
+    "nuts":"CZ064"
+  },
+  "county":"Brno - m─¢sto",
+  "address":"Dominik├ínsk├⌐ n├ím. 196/1, 601 67 Brno-st┼Öed",
+  "sector":"13130 - M├¡stn├¡ vl├ídn├¡ instituce",
+  "creationDate":"1992-07-01",
+  "type":{
+    "id":4,
+    "label":"Obec",
+    "area":"LOCAL"
+  },
+  "founder":{
+    "ic":"44992785",
+    "name":"Statut├írn├¡ m─¢sto Brno",
+    "shortName":"Brno",
+    "nuts":"CZ0642",
+    "population":379527,
+    "region":{
+      "name":"Jihomoravsk├╜",
+      "fullname":"Jihomoravsk├╜ Kraj",
+      "nuts":"CZ064"
+    },
+    "county":"Brno - m─¢sto",
+    "address":"Dominik├ínsk├⌐ n├ím. 196/1, 601 67 Brno-st┼Öed",
+    "sector":"13130 - M├¡stn├¡ vl├ídn├¡ instituce",
+    "creationDate":"1992-07-01",
+    "type":{
+      "id":4,
+      "label":"Obec",
+      "area":"LOCAL"
+    },
+    "founder":{
+      "ic":"44992785"
+    }
+  },
+  "hasContributoryOrganizations":true
+}
+
+------------------------------------------------------
+----- "https://monitor.statnipokladna.cz/api/ucetni-jednotka/44992785?obdobi=1909" -H "Accept: application/json, text/plain, */*" -H "Referer: https://monitor.statnipokladna.cz/ucetni-jednotka/44992785/prehled?rad=t" -H "Accept-Language: cs" -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+{
+  "ic":"44992785",
+  "name":"Statut├írn├¡ m─¢sto Brno",
+  "shortName":"Brno",
+  "nuts":"CZ0642",
+  "population":379527,
+  "region":{
+    "name":"Jihomoravsk├╜",
+    "fullname":"Jihomoravsk├╜ Kraj",
+    "nuts":"CZ064"
+  },
+  "county":"Brno - m─¢sto",
+  "address":"Dominik├ínsk├⌐ n├ím. 196/1, 601 67 Brno-st┼Öed",
+  "sector":"13130 - M├¡stn├¡ vl├ídn├¡ instituce",
+  "creationDate":"1992-07-01",
+  "type":{
+    "id":4,
+    "label":"Obec",
+    "area":"LOCAL"
+  },
+  "founder":{
+    "ic":"44992785",
+    "name":"Statut├írn├¡ m─¢sto Brno",
+    "shortName":"Brno",
+    "nuts":"CZ0642",
+    "population":379527,
+    "region":{
+      "name":"Jihomoravsk├╜",
+      "fullname":"Jihomoravsk├╜ Kraj",
+      "nuts":"CZ064"
+    },
+    "county":"Brno - m─¢sto",
+    "address":"Dominik├ínsk├⌐ n├ím. 196/1, 601 67 Brno-st┼Öed",
+    "sector":"13130 - M├¡stn├¡ vl├ídn├¡ instituce",
+    "creationDate":"1992-07-01",
+    "type":{
+      "id":4,
+      "label":"Obec",
+      "area":"LOCAL"
+    },
+    "founder":{
+      "ic":"44992785"
+    }
+  },
+  "hasContributoryOrganizations":true
+}
+
+
+
+---------------------------
+curl "https://monitor.statnipokladna.cz/api/ukazatele?ic=44992785&obdobi=1909" -H "Accept: application/json, text/plain, */*" -H "Referer: https://monitor.statnipokladna.cz/ucetni-jednotka/44992785/prehled?rad=t&obdobi=1909" -H "Accept-Language: cs" -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+{
+  "dlouhmmaj":{
+    "name":"dlouhmmaj",
+    "value":5.440816889434E10
+  },
+  "krpohlbrut":{
+    "name":"krpohlbrut",
+    "value":3.60148613806E9
+  },
+  "krpohlnet":{
+    "name":"krpohlnet",
+    "value":2.01912129491E9
+  },
+  "cizzdr":{
+    "name":"cizzdr",
+    "value":6.84473339472E9
+  },
+  "prijdluh":{
+    "name":"prijdluh",
+    "value":0.0
+  },
+  "kratzav":{
+    "name":"kratzav",
+    "value":2.16018981339E9
+  },
+  "uroky":{
+    "name":"uroky",
+    "value":3.99826952E7
+  },
+  "vydaje":{
+    "name":"vydaje",
+    "value":1.036039022251E10
+  },
+  "pocob":{
+    "name":"pocob",
+    "value":379527.0
+  },
+  "aktiva":{
+    "name":"aktiva",
+    "value":7.931711533279E10
+  },
+  "saldo":{
+    "name":"saldo",
+    "value":1.24641287039E9
+  },
+  "naklady":{
+    "name":"naklady",
+    "value":9.60789381539E9
+  },
+  "dlouzav":{
+    "name":"dlouzav",
+    "value":4.68400805833E9
+  },
+  "vynosy":{
+    "name":"vynosy",
+    "value":1.335945247966E10
+  },
+  "prijmy":{
+    "name":"prijmy",
+    "value":1.16068030929E10
+  },
+  "dluhcelk":{
+    "name":"dluhcelk",
+    "value":2.4544023826E8
+  },
+  "vysledek":{
+    "name":"vysledek",
+    "value":3.75155866427E9
+  },
+  "uhrdluh":{
+    "name":"uhrdluh",
+    "value":2.0545754306E8
+  },
+  "pohlbrut":{
+    "name":"pohlbrut",
+    "value":5.17784142611E9
+  },
+  "kratfinmaj":{
+    "name":"kratfinmaj",
+    "value":9.12039675049E9
+  }
+}
+
+------------------------------------------------
+curl "https://monitor.statnipokladna.cz/api/ucetni-zaverka/2?obdobi=1909&ic=44992785" -H "Accept: application/json, text/plain, */*" -H "Referer: https://monitor.statnipokladna.cz/ucetni-jednotka/00064581/ucetni-zaverka/vykaz-zisku-a-ztraty?rad=t&obdobi=1909" -H "Accept-Language: cs" -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
+      https://monitor.statnipokladna.cz/ucetni-jednotka/44992785/ucetni-zaverka/vykaz-zisku-a-ztraty?rad=t&obdobi=1909
+{
+  "expenses":[
+    {
+      "name":"N├üKLADY CELKEM",
+      "code":"A.",
+      "mainActivity":8.6031396783E9,
+      "economicActivity":1.00475413709E9,
+      "mainActivityPrev":1.232743269034E10,
+      "economicActivityPrev":1.78342113717E9,
+      "synAccount":"-",
+      "lineNumber":0
+    },
+    {
+      "name":"N├íklady z ─ìinnosti",
+      "code":"A.I.",
+      "mainActivity":5.35109659075E9,
+      "economicActivity":1.00157893994E9,
+      "mainActivityPrev":6.72537331542E9,
+      "economicActivityPrev":1.62264469772E9,
+      "synAccount":"-",
+      "lineNumber":0
+    },
+    {
+      "name":"Spot┼Öeba materi├ílu",
+      "code":"A.I.1.",
+      "mainActivity":4.078790396E7,
+      "economicActivity":3.177499662E7,
+      "mainActivityPrev":6.80919281E7,
+      "economicActivityPrev":3.875786442E7,
+      "synAccount":"501",
+      "lineNumber":0
+    },
+    {
+      "name":"Spot┼Öeba energie",
+      "code":"A.I.2.",
+      "mainActivity":3.83373072E7,
+      "economicActivity":5384784.89,
+      "mainActivityPrev":6.249979513E7,
+      "economicActivityPrev":8788157.36,
+      "synAccount":"502",
+      "lineNumber":0
+    },
+    {
+      "name":"Spot┼Öeba jin├╜ch neskladovateln├╜ch dod├ívek",
+      "code":"A.I.3.",
+      "mainActivity":0.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":0.0,
+      "economicActivityPrev":0.0,
+      "synAccount":"503",
+      "lineNumber":0
+    },
+    {
+      "name":"Prodan├⌐ zbo┼╛├¡",
+      "code":"A.I.4.",
+      "mainActivity":26318.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":10696.0,
+      "economicActivityPrev":809693.7,
+      "synAccount":"504",
+      "lineNumber":0
+    },
+    {
+      "name":"Aktivace dlouhodob├⌐ho majetku",
+      "code":"A.I.5.",
+      "mainActivity":0.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":-86707.0,
+      "economicActivityPrev":0.0,
+      "synAccount":"506",
+      "lineNumber":0
+    },
+    {
+      "name":"Aktivace ob─¢┼╛n├⌐ho majetku",
+      "code":"A.I.6.",
+      "mainActivity":0.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":0.0,
+      "economicActivityPrev":0.0,
+      "synAccount":"507",
+      "lineNumber":0
+    },
+    {
+      "name":"Zm─¢na stavu z├ísob vlastn├¡ v├╜roby",
+      "code":"A.I.7.",
+      "mainActivity":0.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":0.0,
+      "economicActivityPrev":0.0,
+      "synAccount":"508",
+      "lineNumber":0
+    },
+    {
+      "name":"Opravy a udr┼╛ov├ín├¡",
+      "code":"A.I.8.",
+      "mainActivity":4.4577917581E8,
+      "economicActivity":2.6715167765E8,
+      "mainActivityPrev":6.5029340845E8,
+      "economicActivityPrev":5.0864561145E8,
+      "synAccount":"511",
+      "lineNumber":0
+    },
+    {
+      "name":"Cestovn├⌐",
+      "code":"A.I.9.",
+      "mainActivity":7293499.67,
+      "economicActivity":14390.0,
+      "mainActivityPrev":8713857.28,
+      "economicActivityPrev":15611.0,
+      "synAccount":"512",
+      "lineNumber":0
+    },
+    {
+      "name":"N├íklady na reprezentaci",
+      "code":"A.I.10.",
+      "mainActivity":5535979.81,
+      "economicActivity":6808.0,
+      "mainActivityPrev":8678106.26,
+      "economicActivityPrev":8818.0,
+      "synAccount":"513",
+      "lineNumber":0
+    },
+    {
+      "name":"Aktivace vnitroorganiza─ìn├¡ch slu┼╛eb",
+      "code":"A.I.11.",
+      "mainActivity":0.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":0.0,
+      "economicActivityPrev":0.0,
+      "synAccount":"516",
+      "lineNumber":0
+    },
+    {
+      "name":"Ostatn├¡ slu┼╛by",
+      "code":"A.I.12.",
+      "mainActivity":1.15362759935E9,
+      "economicActivity":1.2338110721E8,
+      "mainActivityPrev":1.61538334527E9,
+      "economicActivityPrev":1.8251190651E8,
+      "synAccount":"518",
+      "lineNumber":0
+    },
+    {
+      "name":"Mzdov├⌐ n├íklady",
+      "code":"A.I.13.",
+      "mainActivity":1.15434117643E9,
+      "economicActivity":5.70466744E7,
+      "mainActivityPrev":1.45673957925E9,
+      "economicActivityPrev":7.08214579E7,
+      "synAccount":"521",
+      "lineNumber":0
+    },
+    {
+      "name":"Z├íkonn├⌐ soci├íln├¡ poji┼ít─¢n├¡",
+      "code":"A.I.14.",
+      "mainActivity":3.7300893807E8,
+      "economicActivity":1.88985292E7,
+      "mainActivityPrev":4.6831373872E8,
+      "economicActivityPrev":2.39212836E7,
+      "synAccount":"524",
+      "lineNumber":0
+    },
+    {
+      "name":"Jin├⌐ soci├íln├¡ poji┼ít─¢n├¡",
+      "code":"A.I.15.",
+      "mainActivity":4049572.68,
+      "economicActivity":31510.0,
+      "mainActivityPrev":5157945.49,
+      "economicActivityPrev":51259.0,
+      "synAccount":"525",
+      "lineNumber":0
+    },
+    {
+      "name":"Z├íkonn├⌐ soci├íln├¡ n├íklady",
+      "code":"A.I.16.",
+      "mainActivity":9782523.06,
+      "economicActivity":119772.0,
+      "mainActivityPrev":9515881.85,
+      "economicActivityPrev":163059.0,
+      "synAccount":"527",
+      "lineNumber":0
+    },
+    {
+      "name":"Jin├⌐ soci├íln├¡ n├íklady",
+      "code":"A.I.17.",
+      "mainActivity":2.453974175E7,
+      "economicActivity":595434.0,
+      "mainActivityPrev":2.90840307E7,
+      "economicActivityPrev":707225.0,
+      "synAccount":"528",
+      "lineNumber":0
+    },
+    {
+      "name":"Da┼ê silni─ìn├¡",
+      "code":"A.I.18.",
+      "mainActivity":0.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":0.0,
+      "economicActivityPrev":0.0,
+      "synAccount":"531",
+      "lineNumber":0
+    },
+    {
+      "name":"Da┼ê z nemovitost├¡",
+      "code":"A.I.19.",
+      "mainActivity":636118.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":1262551.0,
+      "economicActivityPrev":0.0,
+      "synAccount":"532",
+      "lineNumber":0
+    },
+    {
+      "name":"Jin├⌐ dan─¢ a poplatky",
+      "code":"A.I.20.",
+      "mainActivity":602054.0,
+      "economicActivity":1713977.5,
+      "mainActivityPrev":2312048.0,
+      "economicActivityPrev":2365847.5,
+      "synAccount":"538",
+      "lineNumber":0
+    },
+    {
+      "name":"Smluvn├¡ pokuty a ├║roky z prodlen├¡",
+      "code":"A.I.22.",
+      "mainActivity":100126.03,
+      "economicActivity":254246.85,
+      "mainActivityPrev":44868.75,
+      "economicActivityPrev":448582.0,
+      "synAccount":"541",
+      "lineNumber":0
+    },
+    {
+      "name":"Jin├⌐ pokuty a pen├íle",
+      "code":"A.I.23.",
+      "mainActivity":223902.05,
+      "economicActivity":352100.0,
+      "mainActivityPrev":2433472.0,
+      "economicActivityPrev":2286.0,
+      "synAccount":"542",
+      "lineNumber":0
+    },
+    {
+      "name":"Dary a jin├í bez├║platn├í p┼Öed├ín├¡",
+      "code":"A.I.24.",
+      "mainActivity":2887947.38,
+      "economicActivity":0.0,
+      "mainActivityPrev":4599516.51,
+      "economicActivityPrev":7500.0,
+      "synAccount":"543",
+      "lineNumber":0
+    },
+    {
+      "name":"Prodan├╜ materi├íl",
+      "code":"A.I.25.",
+      "mainActivity":0.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":0.0,
+      "economicActivityPrev":0.0,
+      "synAccount":"544",
+      "lineNumber":0
+    },
+    {
+      "name":"Manka a ┼íkody",
+      "code":"A.I.26.",
+      "mainActivity":2943196.14,
+      "economicActivity":15000.0,
+      "mainActivityPrev":352404.0,
+      "economicActivityPrev":8000.0,
+      "synAccount":"547",
+      "lineNumber":0
+    },
+    {
+      "name":"Tvorba fond┼»",
+      "code":"A.I.27.",
+      "mainActivity":1.48068715406E9,
+      "economicActivity":0.0,
+      "mainActivityPrev":1.46724304084E9,
+      "economicActivityPrev":0.0,
+      "synAccount":"548",
+      "lineNumber":0
+    },
+    {
+      "name":"Odpisy dlouhodob├⌐ho majetku",
+      "code":"A.I.28.",
+      "mainActivity":4.7687735974E8,
+      "economicActivity":4.792462337E8,
+      "mainActivityPrev":6.5678547055E8,
+      "economicActivityPrev":6.458178144E8,
+      "synAccount":"551",
+      "lineNumber":0
+    },
+    {
+      "name":"Prodan├╜ dlouhodob├╜ nehmotn├╜ majetek",
+      "code":"A.I.29.",
+      "mainActivity":0.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":0.0,
+      "economicActivityPrev":0.0,
+      "synAccount":"552",
+      "lineNumber":0
+    },
+    {
+      "name":"Prodan├╜ dlouhodob├╜ hmotn├╜ majetek",
+      "code":"A.I.30.",
+      "mainActivity":6.49038663E7,
+      "economicActivity":0.0,
+      "mainActivityPrev":8.166460734E7,
+      "economicActivityPrev":225650.0,
+      "synAccount":"553",
+      "lineNumber":0
+    },
+    {
+      "name":"Prodan├⌐ pozemky",
+      "code":"A.I.31.",
+      "mainActivity":6284810.38,
+      "economicActivity":2508822.19,
+      "mainActivityPrev":2.355371683E7,
+      "economicActivityPrev":3.164565483E7,
+      "synAccount":"554",
+      "lineNumber":0
+    },
+    {
+      "name":"Tvorba a z├║─ìtov├ín├¡ rezerv",
+      "code":"A.I.32.",
+      "mainActivity":0.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":268685.0,
+      "economicActivityPrev":0.0,
+      "synAccount":"555",
+      "lineNumber":0
+    },
+    {
+      "name":"Tvorba a z├║─ìtov├ín├¡ opravn├╜ch polo┼╛ek",
+      "code":"A.I.33.",
+      "mainActivity":-7313305.32,
+      "economicActivity":-309031.66,
+      "mainActivityPrev":1663245.1,
+      "economicActivityPrev":8.674398323E7,
+      "synAccount":"556",
+      "lineNumber":0
+    },
+    {
+      "name":"N├íklady z vy┼Öazen├╜ch pohled├ívek",
+      "code":"A.I.34.",
+      "mainActivity":1.427452283E7,
+      "economicActivity":6649003.81,
+      "mainActivityPrev":3.055177672E7,
+      "economicActivityPrev":3252408.41,
+      "synAccount":"557",
+      "lineNumber":0
+    },
+    {
+      "name":"N├íklady z drobn├⌐ho dlouhodob├⌐ho majetku",
+      "code":"A.I.35.",
+      "mainActivity":3.592010762E7,
+      "economicActivity":588474.87,
+      "mainActivityPrev":4.42982055E7,
+      "economicActivityPrev":610926.39,
+      "synAccount":"558",
+      "lineNumber":0
+    },
+    {
+      "name":"Ostatn├¡ n├íklady z ─ìinnosti",
+      "code":"A.I.36.",
+      "mainActivity":1.495899575E7,
+      "economicActivity":6154428.71,
+      "mainActivityPrev":2.594410178E7,
+      "economicActivityPrev":1.631409802E7,
+      "synAccount":"549",
+      "lineNumber":0
+    },
+    {
+      "name":"Finan─ìn├¡ n├íklady",
+      "code":"A.II.",
+      "mainActivity":5.002063455E7,
+      "economicActivity":28036.15,
+      "mainActivityPrev":6.737456471E7,
+      "economicActivityPrev":79649.45,
+      "synAccount":"-",
+      "lineNumber":0
+    },
+    {
+      "name":"Prodan├⌐ cenn├⌐ pap├¡ry a pod├¡ly",
+      "code":"A.II.1.",
+      "mainActivity":0.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":0.0,
+      "economicActivityPrev":0.0,
+      "synAccount":"561",
+      "lineNumber":0
+    },
+    {
+      "name":"├Üroky",
+      "code":"A.II.2.",
+      "mainActivity":3.998269712E7,
+      "economicActivity":28036.15,
+      "mainActivityPrev":3.133876039E7,
+      "economicActivityPrev":77729.45,
+      "synAccount":"562",
+      "lineNumber":0
+    },
+    {
+      "name":"Kurzov├⌐ ztr├íty",
+      "code":"A.II.3.",
+      "mainActivity":122372.37,
+      "economicActivity":0.0,
+      "mainActivityPrev":322949.37,
+      "economicActivityPrev":0.0,
+      "synAccount":"563",
+      "lineNumber":0
+    },
+    {
+      "name":"N├íklady z p┼Öecen─¢n├¡ re├ílnou hodnotou",
+      "code":"A.II.4.",
+      "mainActivity":0.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":7124152.87,
+      "economicActivityPrev":0.0,
+      "synAccount":"564",
+      "lineNumber":0
+    },
+    {
+      "name":"Ostatn├¡ finan─ìn├¡ n├íklady",
+      "code":"A.II.5.",
+      "mainActivity":9915565.06,
+      "economicActivity":0.0,
+      "mainActivityPrev":2.858870208E7,
+      "economicActivityPrev":1920.0,
+      "synAccount":"569",
+      "lineNumber":0
+    },
+    {
+      "name":"N├íklady na transfery",
+      "code":"A.III.",
+      "mainActivity":3.188882946E9,
+      "economicActivity":-196000.0,
+      "mainActivityPrev":5.35779569021E9,
+      "economicActivityPrev":-4621000.0,
+      "synAccount":"-",
+      "lineNumber":0
+    },
+    {
+      "name":"N├íklady vybran├╜ch m├¡stn├¡ch vl├ídn├¡ch instituc├¡ na transfery",
+      "code":"A.III.2.",
+      "mainActivity":3.188882946E9,
+      "economicActivity":-196000.0,
+      "mainActivityPrev":5.35779569021E9,
+      "economicActivityPrev":-4621000.0,
+      "synAccount":"572",
+      "lineNumber":0
+    },
+    {
+      "name":"Da┼ê z p┼Ö├¡jm┼»",
+      "code":"A.V.",
+      "mainActivity":1.3139507E7,
+      "economicActivity":3343161.0,
+      "mainActivityPrev":1.7688912E8,
+      "economicActivityPrev":1.6531779E8,
+      "synAccount":"-",
+      "lineNumber":0
+    },
+    {
+      "name":"Da┼ê z p┼Ö├¡jm┼»",
+      "code":"A.V.1.",
+      "mainActivity":1.3139507E7,
+      "economicActivity":3343161.0,
+      "mainActivityPrev":1.7688912E8,
+      "economicActivityPrev":1.6531779E8,
+      "synAccount":"591",
+      "lineNumber":0
+    },
+    {
+      "name":"Dodate─ìn├⌐ odvody dan─¢ z p┼Ö├¡jm┼»",
+      "code":"A.V.2.",
+      "mainActivity":0.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":0.0,
+      "economicActivityPrev":0.0,
+      "synAccount":"595",
+      "lineNumber":0
+    }
+  ],
+  "revenues":[
+    {
+      "name":"V├¥NOSY CELKEM",
+      "code":"B.",
+      "mainActivity":1.160883985309E10,
+      "economicActivity":1.75061262657E9,
+      "mainActivityPrev":1.475137581354E10,
+      "economicActivityPrev":2.54592486814E9,
+      "synAccount":"-",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy z ─ìinnosti",
+      "code":"B.I.",
+      "mainActivity":2.80996890502E9,
+      "economicActivity":1.71797805562E9,
+      "mainActivityPrev":3.5121269538E9,
+      "economicActivityPrev":2.48481608337E9,
+      "synAccount":"-",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy z prodeje vlastn├¡ch v├╜robk┼»",
+      "code":"B.I.1.",
+      "mainActivity":3442.27,
+      "economicActivity":265948.29,
+      "mainActivityPrev":74697.1,
+      "economicActivityPrev":214272.56,
+      "synAccount":"601",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy z prodeje slu┼╛eb",
+      "code":"B.I.2.",
+      "mainActivity":7.917092516E7,
+      "economicActivity":5.789895359E7,
+      "mainActivityPrev":1.0948864475E8,
+      "economicActivityPrev":8.784135152E7,
+      "synAccount":"602",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy z pron├íjmu",
+      "code":"B.I.3.",
+      "mainActivity":1.9501204264E8,
+      "economicActivity":1.59179800296E9,
+      "mainActivityPrev":2.6262895535E8,
+      "economicActivityPrev":2.11574722557E9,
+      "synAccount":"603",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy z prodan├⌐ho zbo┼╛├¡",
+      "code":"B.I.4.",
+      "mainActivity":23933.26,
+      "economicActivity":0.0,
+      "mainActivityPrev":56947.55,
+      "economicActivityPrev":212897.13,
+      "synAccount":"604",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy ze spr├ívn├¡ch poplatk┼»",
+      "code":"B.I.5.",
+      "mainActivity":7.057330861E7,
+      "economicActivity":0.0,
+      "mainActivityPrev":9.442230511E7,
+      "economicActivityPrev":0.0,
+      "synAccount":"605",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy z m├¡stn├¡ch poplatk┼»",
+      "code":"B.I.6.",
+      "mainActivity":3.2804750067E8,
+      "economicActivity":0.0,
+      "mainActivityPrev":3.4864919438E8,
+      "economicActivityPrev":0.0,
+      "synAccount":"606",
+      "lineNumber":0
+    },
+    {
+      "name":"Jin├⌐ v├╜nosy z vlastn├¡ch v├╜kon┼»",
+      "code":"B.I.8.",
+      "mainActivity":3625872.1,
+      "economicActivity":3150.0,
+      "mainActivityPrev":4461637.85,
+      "economicActivityPrev":0.0,
+      "synAccount":"609",
+      "lineNumber":0
+    },
+    {
+      "name":"Smluvn├¡ pokuty a ├║roky z prodlen├¡",
+      "code":"B.I.9.",
+      "mainActivity":2.425795206E7,
+      "economicActivity":6415311.93,
+      "mainActivityPrev":1.567101808E7,
+      "economicActivityPrev":8.214876598E7,
+      "synAccount":"641",
+      "lineNumber":0
+    },
+    {
+      "name":"Jin├⌐ pokuty a pen├íle",
+      "code":"B.I.10.",
+      "mainActivity":5.13354222E7,
+      "economicActivity":7133.84,
+      "mainActivityPrev":6.9471413E7,
+      "economicActivityPrev":0.0,
+      "synAccount":"642",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy z vy┼Öazen├╜ch pohled├ívek",
+      "code":"B.I.11.",
+      "mainActivity":162572.55,
+      "economicActivity":494270.3,
+      "mainActivityPrev":152840.54,
+      "economicActivityPrev":553358.43,
+      "synAccount":"643",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy z prodeje materi├ílu",
+      "code":"B.I.12.",
+      "mainActivity":302398.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":655942.87,
+      "economicActivityPrev":0.0,
+      "synAccount":"644",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy z prodeje dlouhodob├⌐ho nehmotn├⌐ho majetku",
+      "code":"B.I.13.",
+      "mainActivity":0.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":0.0,
+      "economicActivityPrev":0.0,
+      "synAccount":"645",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy z prodeje dlouhodob├⌐ho hmotn├⌐ho majetku krom─¢ pozemk┼»",
+      "code":"B.I.14.",
+      "mainActivity":9.831588995E7,
+      "economicActivity":249024.59,
+      "mainActivityPrev":1.95937951E8,
+      "economicActivityPrev":517851.22,
+      "synAccount":"646",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy z prodeje pozemk┼»",
+      "code":"B.I.15.",
+      "mainActivity":7.370363618E7,
+      "economicActivity":5.693757843E7,
+      "mainActivityPrev":2.0780953E8,
+      "economicActivityPrev":1.8609928731E8,
+      "synAccount":"647",
+      "lineNumber":0
+    },
+    {
+      "name":"─îerp├ín├¡ fond┼»",
+      "code":"B.I.16.",
+      "mainActivity":1.82314893081E9,
+      "economicActivity":0.0,
+      "mainActivityPrev":2.11326257664E9,
+      "economicActivityPrev":0.0,
+      "synAccount":"648",
+      "lineNumber":0
+    },
+    {
+      "name":"Ostatn├¡ v├╜nosy z ─ìinnosti",
+      "code":"B.I.17.",
+      "mainActivity":6.228507856E7,
+      "economicActivity":3908681.69,
+      "mainActivityPrev":8.938329958E7,
+      "economicActivityPrev":1.148107365E7,
+      "synAccount":"649",
+      "lineNumber":0
+    },
+    {
+      "name":"Finan─ìn├¡ v├╜nosy",
+      "code":"B.II.",
+      "mainActivity":1.5514416981E8,
+      "economicActivity":2469424.41,
+      "mainActivityPrev":2.3119934754E8,
+      "economicActivityPrev":4689112.39,
+      "synAccount":"-",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy z prodeje cenn├╜ch pap├¡r┼» a pod├¡l┼»",
+      "code":"B.II.1.",
+      "mainActivity":0.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":0.0,
+      "economicActivityPrev":0.0,
+      "synAccount":"661",
+      "lineNumber":0
+    },
+    {
+      "name":"├Üroky",
+      "code":"B.II.2.",
+      "mainActivity":4.598618097E7,
+      "economicActivity":2469424.41,
+      "mainActivityPrev":1.397494332E7,
+      "economicActivityPrev":769854.97,
+      "synAccount":"662",
+      "lineNumber":0
+    },
+    {
+      "name":"Kurzov├⌐ zisky",
+      "code":"B.II.3.",
+      "mainActivity":3729.87,
+      "economicActivity":0.0,
+      "mainActivityPrev":22884.72,
+      "economicActivityPrev":0.0,
+      "synAccount":"663",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy z p┼Öecen─¢n├¡ re├ílnou hodnotou",
+      "code":"B.II.4.",
+      "mainActivity":5.048560856E7,
+      "economicActivity":0.0,
+      "mainActivityPrev":8.157595587E7,
+      "economicActivityPrev":3919257.42,
+      "synAccount":"664",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy z dlouhodob├⌐ho finan─ìn├¡ho majetku",
+      "code":"B.II.5.",
+      "mainActivity":5.862333411E7,
+      "economicActivity":0.0,
+      "mainActivityPrev":1.3561619313E8,
+      "economicActivityPrev":0.0,
+      "synAccount":"665",
+      "lineNumber":0
+    },
+    {
+      "name":"Ostatn├¡ finan─ìn├¡ v├╜nosy",
+      "code":"B.II.6.",
+      "mainActivity":45316.3,
+      "economicActivity":0.0,
+      "mainActivityPrev":9370.5,
+      "economicActivityPrev":0.0,
+      "synAccount":"669",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy z transfer┼»",
+      "code":"B.IV.",
+      "mainActivity":5.0049482022E8,
+      "economicActivity":3.016514654E7,
+      "mainActivityPrev":8.4326440681E8,
+      "economicActivityPrev":5.641967238E7,
+      "synAccount":"-",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy vybran├╜ch m├¡stn├¡ch vl├ídn├¡ch instituc├¡ z transfer┼»",
+      "code":"B.IV.2.",
+      "mainActivity":5.0049482022E8,
+      "economicActivity":3.016514654E7,
+      "mainActivityPrev":8.4326440681E8,
+      "economicActivityPrev":5.641967238E7,
+      "synAccount":"672",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy ze sd├¡len├╜ch dan├¡ a poplatk┼»",
+      "code":"B.V.",
+      "mainActivity":8.14323195804E9,
+      "economicActivity":0.0,
+      "mainActivityPrev":1.016478510539E10,
+      "economicActivityPrev":0.0,
+      "synAccount":"-",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy ze sd├¡len├⌐ dan─¢ z p┼Ö├¡jm┼» fyzick├╜ch osob",
+      "code":"B.V.1.",
+      "mainActivity":2.22502440991E9,
+      "economicActivity":0.0,
+      "mainActivityPrev":2.71896641851E9,
+      "economicActivityPrev":0.0,
+      "synAccount":"681",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy ze sd├¡len├⌐ dan─¢ z p┼Ö├¡jm┼» pr├ívnick├╜ch osob",
+      "code":"B.V.2.",
+      "mainActivity":2.00618038594E9,
+      "economicActivity":0.0,
+      "mainActivityPrev":2.29783889062E9,
+      "economicActivityPrev":0.0,
+      "synAccount":"682",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy ze sd├¡len├⌐ dan─¢ z p┼Öidan├⌐ hodnoty",
+      "code":"B.V.3.",
+      "mainActivity":3.66872825362E9,
+      "economicActivity":0.0,
+      "mainActivityPrev":4.83814516551E9,
+      "economicActivityPrev":0.0,
+      "synAccount":"684",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy ze sd├¡len├╜ch spot┼Öebn├¡ch dan├¡",
+      "code":"B.V.4.",
+      "mainActivity":0.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":0.0,
+      "economicActivityPrev":0.0,
+      "synAccount":"685",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy ze sd├¡len├╜ch majetkov├╜ch dan├¡",
+      "code":"B.V.5.",
+      "mainActivity":1.9465457682E8,
+      "economicActivity":0.0,
+      "mainActivityPrev":2.4612549709E8,
+      "economicActivityPrev":0.0,
+      "synAccount":"686",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜nosy z ostatn├¡ch sd├¡len├╜ch dan├¡ a poplatk┼»",
+      "code":"B.V.6.",
+      "mainActivity":4.864433175E7,
+      "economicActivity":0.0,
+      "mainActivityPrev":6.370913366E7,
+      "economicActivityPrev":0.0,
+      "synAccount":"688",
+      "lineNumber":0
+    },
+    {
+      "name":"V├¥SLEDEK HOSPODA┼ÿEN├ì",
+      "code":"C.",
+      "mainActivity":0.0,
+      "economicActivity":0.0,
+      "mainActivityPrev":0.0,
+      "economicActivityPrev":0.0,
+      "synAccount":"-",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜sledek hospoda┼Öen├¡ p┼Öed zdan─¢n├¡m",
+      "code":"C.1.",
+      "mainActivity":3.01883968179E9,
+      "economicActivity":7.4920165048E8,
+      "mainActivityPrev":2.6008322432E9,
+      "economicActivityPrev":9.2782152097E8,
+      "synAccount":"-",
+      "lineNumber":0
+    },
+    {
+      "name":"V├╜sledek hospoda┼Öen├¡ b─¢┼╛n├⌐ho ├║─ìetn├¡ho obdob├¡",
+      "code":"C.2.",
+      "mainActivity":3.00570017479E9,
+      "economicActivity":7.4585848948E8,
+      "mainActivityPrev":2.4239431232E9,
+      "economicActivityPrev":7.6250373097E8,
+      "synAccount":"-",
+      "lineNumber":0
+    }
+  ]
+}
+

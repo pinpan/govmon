@@ -2,13 +2,11 @@ package cz.gov.monitor.mfcr.service;
 
 import cz.gov.monitor.mfcr.client.RestClient;
 import cz.gov.monitor.mfcr.config.GovMonitorServerConfig;
-import cz.gov.monitor.mfcr.config.ServiceDefinition;
 import cz.gov.monitor.mfcr.model.FinancialReport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -23,7 +21,7 @@ public class MonitorService {
     private static ParameterizedTypeReference<FinancialReport> financialReportTypeRef = new ParameterizedTypeReference<FinancialReport>() {};
 
     // ucetni-zaverka/2 obdobi=1909&ic=44992785"
-    private static Map<Type, ServiceDefinition> services = new HashMap();
+    // private static Map<Type, ServiceDefinition> services = new HashMap();
 
 
     @Autowired
@@ -34,27 +32,19 @@ public class MonitorService {
 
     public List<FinancialReport> fetchReports(String ico, String period) {
 
-        String serviceUrl = govMonitorServerConfig.getUrl();
-        StringBuilder sb = new StringBuilder(serviceUrl);
-
-        ServiceDefinition serviceDefinition = services.get(financialReportTypeRef.getType());
-        if ((serviceDefinition != null) && (serviceDefinition.getServicePath() != null)) {
-            if (!"".equals(serviceDefinition.getServicePath().trim())) {
-                sb.append("/").append(serviceDefinition.getServicePath());
-            }
-        }
+        StringBuilder sb = new StringBuilder(govMonitorServerConfig.serviceUrl("report"));
 
         Map<String, String> queryParamsMap = new HashMap();
-        queryParamsMap.put("ic", ico);
         queryParamsMap.put("obdobi", period);
+        queryParamsMap.put("ic", ico);
         sb = addQueryParams(sb, queryParamsMap);
-        serviceUrl = sb.toString();
+        String serviceUrl = sb.toString();
 
         List<FinancialReport> financialReports = restClient.fetchFinancialReports(serviceUrl, financialReportTypeRef);
         return financialReports;
     }
 
-    private StringBuilder addQueryParams(StringBuilder sb, Map<String, String> queryParamsMap) {
+    private static StringBuilder addQueryParams(StringBuilder sb, Map<String, String> queryParamsMap) {
         if (!queryParamsMap.isEmpty()) {
             sb.append("?");
 

@@ -25,6 +25,7 @@ public class GovMonServiceTest {
     public void testFetch() {
         Date dateFrom = new Date();
         Date theDayAfterTommorow = DateUtils.getTwoDaysLater(new Date());
-        List<FinancialReport> reports = monitorService.fetchReports("", "1909");
+        List<FinancialReport> reports = monitorService.fetchReports("44992785", "1909");
+
     }
 }

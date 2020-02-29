@@ -44,7 +44,8 @@ public class RestClient {
     public List<FinancialReport> fetchFinancialReports(String serviceBaseUrl, ParameterizedTypeReference typeRef) {
 
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Accept", "text/html;charset=utf-8");
+        headers.set("Accept-Language", "cs");
+        headers.set("Accept", "application/json, text/plain, */*");
         HttpEntity<HttpHeaders> httpEntity = new HttpEntity(null, headers);
 
 

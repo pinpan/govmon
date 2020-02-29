@@ -10,9 +10,6 @@ spring:
         name: govmon
     mvc:
         throw-exception-if-no-handler-found: true
-    output:
-        ansi:
-            enabled: detect
     jpa:
         database-platform: org.hibernate.dialect.MySQLDialect
     datasource:
@@ -28,11 +25,8 @@ monitor:
             server:
                 scheme: https
                 host: monitor.statnipokladna.cz
-                port:
+                port: 443
                 path: /api
-            paths:
-                organization: /ucetni-jednotka
-                report: /ucetni-zaverka/2
 
 servlet:
     contextPath: /${spring.application.name}
@@ -46,4 +40,3 @@ management:
     health:
         defaults:
             enabled: false
-
