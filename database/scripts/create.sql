@@ -3,8 +3,8 @@ CREATE DATABASE govmon;
 CREATE USER 'moni'@'localhost' IDENTIFIED BY 'password';
 CREATE USER 'moni'@'%' IDENTIFIED BY 'password';
 
-GRANT SELECT, INSERT, UPDATE, DELETE ON govmon.* TO 'moni'@'localhost' WITH GRANT OPTION;
-GRANT SELECT, INSERT, UPDATE, DELETE ON govmon.* TO 'moni'@'%' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON govmon.* TO 'moni'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON govmon.* TO 'moni'@'%' WITH GRANT OPTION;
 
 CREATE TABLE expense \
 (                    \

@@ -1,10 +1,5 @@
 buildscript {
 
-    /*ext {
-        springBootVersion = '2.2.4.RELEASE'
-        springBootGradleVersion =  '2.1.6.RELEASE'
-    }*/
-
     repositories {
         mavenCentral()
     }
@@ -44,7 +39,8 @@ ext {
         spring_boot_starter_security       : "org.springframework.boot:spring-boot-starter-security:${springBootVersion}",
         spring_boot_starter_web            : "org.springframework.boot:spring-boot-starter-web:${springBootVersion}",
         spring_boot_starter_test           : "org.springframework.boot:spring-boot-starter-test:${springBootVersion}",
-        spring_boot_starter_data_jpa       : "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
+        spring_boot_starter_data_jpa       : "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}",
+        //spring_boot_gradle_plugin          : "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
     ]
 }
 
