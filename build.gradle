@@ -21,10 +21,9 @@ ext {
     appName = 'govmon'
     version = '0.0.1-SNAPSHOT'
 
+    jacksonCoreVersion = "2.9.6"
     lombokVersion = '1.18.4'
-
     httpClientVersion = '4.5.3'
-
     logbackVersion = '1.2.3'
     springFoxVersion = '2.8.0'
 
@@ -33,6 +32,8 @@ ext {
         mysql_driver                       : 'mysql:mysql-connector-java:8.0.13',
         lombok                             : "org.projectlombok:lombok:${lombokVersion}",
         springFox                          : "io.springfox:springfox-swagger2:${springFoxVersion}",
+        //jaxb                               : "javax.xml.bind:jaxb-api:2.2.11",
+        jackson_core                       : "com.fasterxml.jackson.core:jackson-core:${jacksonCoreVersion}",
 
         spring_framework_security          : "org.springframework.security:spring-security-core:${springFrameworkSecurity}",
         spring_boot_starter_actuator       : "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}",
@@ -90,6 +91,8 @@ dependencies {
 
     implementation libraries.http_client
     implementation libraries.springFox
+    //implementation libraries.jaxb
+    implementation libraries.jackson_core
     implementation libraries.mysql_driver
     implementation libraries.lombok
 
