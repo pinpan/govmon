@@ -1,5 +1,6 @@
 package cz.gov.monitor.mfcr.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -77,5 +78,6 @@ public class BalanceStatement {
 
     @ManyToOne(optional=false)
     @JoinColumn(name="report_id",referencedColumnName="id")
+    @JsonIgnore
     private FinancialReport report;
 }

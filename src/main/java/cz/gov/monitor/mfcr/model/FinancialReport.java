@@ -1,5 +1,7 @@
 package cz.gov.monitor.mfcr.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,12 +14,8 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name="financial_report")
+@JsonPropertyOrder({"organization", "period", "expenses", "revenues"})
 public class FinancialReport {
-
-    @javax.persistence.Id
-    @Column(name="id")
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id;
 
     @ManyToOne(optional=false)
     @JoinColumn(name="organization_id",referencedColumnName="id")
@@ -25,6 +23,12 @@ public class FinancialReport {
 
     @Column(name="period")
     private String period;
+
+    @javax.persistence.Id
+    @Column(name="id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @JsonIgnore
+    private Long id;
 
     @OneToMany(mappedBy="report",
                targetEntity= BalanceStatement.class,

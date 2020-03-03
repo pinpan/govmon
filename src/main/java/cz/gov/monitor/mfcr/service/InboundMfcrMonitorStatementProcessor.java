@@ -40,11 +40,16 @@ public class InboundMfcrMonitorStatementProcessor implements MfcrMonitorStatemen
         }
         fr.setOrganization(organization);
         fr.setPeriod(period);
-        for (BalanceStatement expense: fr.getExpenses()) {
-            expense.setReport(fr);
+        mfcrMonitorDBService.saveReport(fr);
+        for (BalanceStatement statement: fr.getExpenses()) {
+            statement.setReport(fr);
+            mfcrMonitorDBService.saveStatement(statement);
         }
 
-        mfcrMonitorDBService.saveReport(fr);
+        for (BalanceStatement statement: fr.getRevenues()) {
+            statement.setReport(fr);
+            mfcrMonitorDBService.saveStatement(statement);
+        }
     }
 
     public void processReport(FinancialReport financialReport, String ico, String period) {

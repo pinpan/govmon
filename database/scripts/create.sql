@@ -35,10 +35,13 @@ CREATE TABLE organization \
 (                         \
 id             INT AUTO_INCREMENT, \
 name           varchar(255),       \
-mfcr_id        varchar(50),        \
 ico            varchar(8),         \
 short_name     varchar(50),        \
 nuts           varchar(255),       \
+county         varchar(255),       \
+address        varchar(255),       \
+sector         varchar(255),       \
+creation_date  varchar(255),       \
 org_type       long,               \
 PRIMARY KEY (id)                   \
 ) ENGINE = InnoDB;

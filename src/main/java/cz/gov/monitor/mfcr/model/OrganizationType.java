@@ -1,16 +1,54 @@
 package cz.gov.monitor.mfcr.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="organization_type")
+//@AllArgsConstructor
+//@RequiredArgsConstructor
+@NoArgsConstructor
+@Getter
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum OrganizationType {
-    Obec(4, "Obec", "LOCAL"), Urad(1, "Urad","LOCAL");
+    DISTRICT(4, "Obec", "LOCAL"), MUNICIPLITY(1, "Urad","LOCAL"), UNKNOWN(-1, "Unknown", "LOCAL");
 
     OrganizationType(int id, String label, String area) {
         this.id = id;
         this.label = label;
         this.area = area;
+    }
+
+
+    @JsonCreator
+    public static OrganizationType fromValue(String id) {
+        if (id == null) {
+            return null;
+        }
+
+        Integer theId = Integer.valueOf(id);
+        switch (theId) {
+            case 1: return MUNICIPLITY;
+            case 4: return DISTRICT;
+            default: return UNKNOWN;
+        }
+    }
+
+    @JsonCreator
+    public static OrganizationType fromJson(@JsonProperty("type") String type) {
+        if (type == null) {
+            return null;
+        }
+
+        switch (type) {
+            case "1": return MUNICIPLITY;
+            case "4": return DISTRICT;
+            default: return UNKNOWN;
+        }
     }
 
     @javax.persistence.Id
@@ -23,4 +61,16 @@ public enum OrganizationType {
 
     @Column(name="area")
     String area;
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
 }

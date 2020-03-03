@@ -1,5 +1,9 @@
 package cz.gov.monitor.mfcr.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import cz.gov.monitor.mfcr.utils.OrganizationTypeDeserializer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,17 +27,11 @@ public class Organization {
     private Long id;
 
     /**
-     * Id according to monitor.mfcr.cz
-     */
-    @Column(name="mfcr_id")
-    private String mfcrId;
-
-    /**
      *  IČ(O) - is a string because can have leading 0-es
      */
     @Column(name="ico")
+    @JsonProperty("ic")
     private String ico;
-
 
     /**
      *
@@ -53,16 +51,24 @@ public class Organization {
     @Column(name="nuts")
     private String nuts;
 
+    private String county;       //:"Brno - m─¢sto",
+    private String address;      //:"Dominik├ínsk├⌐ n├ím. 196/1, 601 67 Brno-st┼Öed",
+    private String sector;       //:"13130 - M├¡stn├¡ vl├ídn├¡ instituce",
+
+    private String creationDate; //:"1992-07-01",
+
     /**
      * Organization type
      */
     @Enumerated
     @Column(name="org_type")
+    @JsonDeserialize(using = OrganizationTypeDeserializer.class)
     private OrganizationType type;
 
     @OneToMany(mappedBy="organization",
             targetEntity=FinancialReport.class,
             fetch=FetchType.EAGER)
+    @JsonIgnore
     private List<FinancialReport> financialReports;
 
 }

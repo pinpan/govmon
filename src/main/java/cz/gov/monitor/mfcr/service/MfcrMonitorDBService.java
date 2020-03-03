@@ -3,6 +3,7 @@ package cz.gov.monitor.mfcr.service;
 import cz.gov.monitor.mfcr.dao.BalanceStatementDao;
 import cz.gov.monitor.mfcr.dao.ReportDao;
 import cz.gov.monitor.mfcr.dao.OrganizationDao;
+import cz.gov.monitor.mfcr.model.BalanceStatement;
 import cz.gov.monitor.mfcr.model.FinancialReport;
 import cz.gov.monitor.mfcr.model.Organization;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +50,9 @@ public class MfcrMonitorDBService {
 
     public void saveOrganization(Organization organization) {
         organizationDao.save(organization);
+    }
+
+    public void saveStatement(BalanceStatement statement) {
+        balanceStatementDao.save(statement);
     }
 }

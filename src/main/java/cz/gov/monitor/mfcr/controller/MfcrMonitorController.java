@@ -50,7 +50,7 @@ public class MfcrMonitorController {
     @ApiResponses( value = {
             @ApiResponse(code = 200, message = "Financial reports list of an organization identified by company ID for a given fiscal period.")
     })
-    public FinancialReport getFinancialReport(@RequestParam(value = "ico", defaultValue = "00123456") String ico
+    public FinancialReportResponse getFinancialReport(@RequestParam(value = "ico", defaultValue = "00123456") String ico
                                              ,@RequestParam(value = "obdobi", defaultValue = "1909") String period
                                                     ) {
         // 1. Fetch the organization
@@ -63,7 +63,9 @@ public class MfcrMonitorController {
         }
 
         // 2. Fetch organization reports for given period
-        return mfcrMonitorRESTService.fetchReport(ico, period);
+        FinancialReport report = mfcrMonitorRESTService.fetchReport(ico, period);
+        report.setOrganization(organization);
+        return new FinancialReportResponse(report);
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/monitor/financialreport/eligible")
@@ -72,9 +74,9 @@ public class MfcrMonitorController {
     @ApiResponses( value = {
             @ApiResponse(code = 200, message = "Financial reports list of an organization identified by company ID for a given fiscal period.")
     })
-    public FinancialReport getControllableStatements(@RequestParam(value = "ico", defaultValue = "00123456") String ico
+    public FinancialReportResponse getControllableStatements(@RequestParam(value = "ico", defaultValue = "00123456") String ico
                                                     ,@RequestParam(value = "obdobi", defaultValue = "1909") String period
                                                     ) {
-        return mfcrMonitorRESTService.fetchReport(ico, period);
+        return new FinancialReportResponse(mfcrMonitorRESTService.fetchReport(ico, period));
     }
 }
