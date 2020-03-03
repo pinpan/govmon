@@ -6,7 +6,7 @@ CREATE USER 'moni'@'%' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON govmon.* TO 'moni'@'localhost' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON govmon.* TO 'moni'@'%' WITH GRANT OPTION;
 
-CREATE TABLE expense \
+CREATE TABLE balance_statement \
 (                    \
 id             INT AUTO_INCREMENT, \
 name                   varchar(255), \

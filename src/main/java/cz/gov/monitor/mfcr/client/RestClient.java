@@ -1,10 +1,8 @@
 package cz.gov.monitor.mfcr.client;
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.util.*;
 
-import cz.gov.monitor.mfcr.config.ServiceDefinition;
 import cz.gov.monitor.mfcr.model.FinancialReport;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.slf4j.Logger;
@@ -41,7 +39,7 @@ public class RestClient {
      * @param serviceBaseUrl
      * @return
      */
-    public List<FinancialReport> fetchFinancialReports(String serviceBaseUrl, ParameterizedTypeReference typeRef) {
+    public List<FinancialReport> fetchResourcesList(String serviceBaseUrl, ParameterizedTypeReference typeRef) {
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("Accept-Language", "cs");
@@ -49,37 +47,58 @@ public class RestClient {
         HttpEntity<HttpHeaders> httpEntity = new HttpEntity(null, headers);
 
 
-        List<FinancialReport> response = fetchFinancialReports(serviceBaseUrl, httpEntity, typeRef);
+        List<FinancialReport> response = fetchResourcesList(serviceBaseUrl, httpEntity, typeRef);
 
         return response;
     }
 
 
-    public List fetchFinancialReports(String searchUrl, HttpEntity<HttpHeaders> httpEntity, ParameterizedTypeReference typeRef) {
-        LOGGER.info("Fetch Financial Reports from MFCR endpoint: %s", searchUrl);
+    public <T> List<T> fetchResourcesList(String searchUrl, HttpEntity<HttpHeaders> httpEntity, ParameterizedTypeReference<List<T>> typeRef) {
+        LOGGER.info("Fetch Resources of type %s from endpoint: %s", typeRef.toString(), searchUrl);
 
-        ResponseEntity response = restTemplate.exchange(searchUrl, HttpMethod.GET, httpEntity, typeRef);
+        ResponseEntity<List<T>> response = restTemplate.exchange(searchUrl, HttpMethod.GET, httpEntity, typeRef);
 
-        List reports = null;
+        List<T> resources = null;
         if (HttpStatus.OK.equals(response.getStatusCode())) {
 
             if (response.getBody() != null) {
 
                 // Copy into new list to avoid access issues
-                reports = Arrays.asList(response.getBody());
-                LOGGER.info("Reports found: " + reports.size());
+                resources = response.getBody();
+                LOGGER.info("Reports found: " + resources.size());
             } else {
                 LOGGER.info("No reports found.");
             }
         } else {
-            LOGGER.info("Couldn't find place data. Geonames /search service returned Http status code: " + response.getStatusCode());
+            LOGGER.info("Couldn't find data. REST service returned Http status code: " + response.getStatusCode());
         }
 
-        if (reports == null) {
-            reports = new ArrayList();
+        if (resources == null) {
+            resources = new ArrayList();
         }
 
-        return reports;
+        return resources;
+    }
+
+    public <T> T fetchResource(String searchUrl, HttpEntity<HttpHeaders> httpEntity, ParameterizedTypeReference<T> typeRef) {
+        LOGGER.info("Fetch Resource of type %s from endpoint: %s", typeRef.toString(), searchUrl);
+
+        ResponseEntity<T> response = restTemplate.exchange(searchUrl, HttpMethod.GET, httpEntity, typeRef);
+
+        if (HttpStatus.OK.equals(response.getStatusCode())) {
+
+            if (response.getBody() != null) {
+
+                // Copy into new list to avoid access issues
+                LOGGER.info("Resource found: " + response.getBody());
+            } else {
+                LOGGER.info("No resource of type %s found.", typeRef.toString());
+            }
+        } else {
+            LOGGER.info("Couldn't find data. REST service returned Http status code: " + response.getStatusCode());
+        }
+
+        return response.getBody();
     }
 
     protected static String getHttpQueryStringFromParams(Map<String, String> queryParams) {

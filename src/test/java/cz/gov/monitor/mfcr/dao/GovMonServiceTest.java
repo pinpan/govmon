@@ -1,7 +1,7 @@
 package cz.gov.monitor.mfcr.dao;
 
 import cz.gov.monitor.mfcr.model.FinancialReport;
-import cz.gov.monitor.mfcr.service.MonitorService;
+import cz.gov.monitor.mfcr.service.MfcrMonitorRESTService;
 import cz.gov.monitor.mfcr.utils.DateUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +11,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Date;
-import java.util.List;
 
 import static junit.framework.TestCase.assertNotNull;
 import static junit.framework.TestCase.assertNull;
@@ -22,7 +21,7 @@ import static junit.framework.TestCase.assertNull;
 public class GovMonServiceTest {
 
     @Autowired
-    private MonitorService monitorService;
+    private MfcrMonitorRESTService monitorService;
 
     @Test
     public void testFetch() {

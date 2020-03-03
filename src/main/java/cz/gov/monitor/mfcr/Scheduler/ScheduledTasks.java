@@ -1,20 +1,16 @@
 package cz.gov.monitor.mfcr.Scheduler;
 
-import cz.gov.monitor.mfcr.service.InboundMfcrMonitorStatementProcessor;
-import cz.gov.monitor.mfcr.service.MonitorService;
-import cz.gov.monitor.mfcr.model.FinancialReport;
+import cz.gov.monitor.mfcr.service.MfcrMonitorRESTService;
 import cz.gov.monitor.mfcr.utils.DateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 @Component
 public class ScheduledTasks {
@@ -34,11 +30,11 @@ public class ScheduledTasks {
 
 
     @Autowired
-    MonitorService service;
+    MfcrMonitorRESTService service;
 
 
     @Autowired
-    MonitorService monitoringService;
+    MfcrMonitorRESTService monitoringService;
 
     @PostConstruct
     public void onStartup() {

@@ -10,8 +10,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="expense")
-public class Expense {
+@Table(name="balance_statement  ")
+public class BalanceStatement {
     /*
     "expenses":[
     {
@@ -24,6 +24,23 @@ public class Expense {
         "synAccount":"-",
         "lineNumber":0
     }
+    .....
+  }
+
+  "revenues":[
+    {
+      "name":"V├¥NOSY CELKEM",
+      "code":"B.",
+      "mainActivity":1.160883985309E10,
+      "economicActivity":1.75061262657E9,
+      "mainActivityPrev":1.475137581354E10,
+      "economicActivityPrev":2.54592486814E9,
+      "synAccount":"-",
+      "lineNumber":0
+    }
+    .....
+    }
+
    */
 
     /**

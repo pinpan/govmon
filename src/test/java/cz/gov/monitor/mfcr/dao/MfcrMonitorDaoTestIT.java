@@ -19,7 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class MfcrMonitorDaoTestIT {
 
 	@Autowired
-	private MfcrMonitorDao mfcrMonitorDao;
+	private ReportDao mfcrMonitorDao;
 
 	@Test
 	public void testFindById() {

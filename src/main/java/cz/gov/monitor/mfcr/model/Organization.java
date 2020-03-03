@@ -56,8 +56,6 @@ public class Organization {
     /**
      * Organization type
      */
-    //@ManyToOne//(optional=false)//(cascade =CascadeType.REFRESH, targetEntity =OrganizationType.class)
-    //@JoinColumn(name="type_id",referencedColumnName="id")
     @Enumerated
     @Column(name="org_type")
     private OrganizationType type;

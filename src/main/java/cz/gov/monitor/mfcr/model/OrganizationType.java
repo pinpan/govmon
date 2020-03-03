@@ -7,9 +7,9 @@ import javax.persistence.*;
 public enum OrganizationType {
     Obec(4, "Obec", "LOCAL"), Urad(1, "Urad","LOCAL");
 
-    OrganizationType(int id, String type, String area) {
+    OrganizationType(int id, String label, String area) {
         this.id = id;
-        this.type = type;
+        this.label = label;
         this.area = area;
     }
 
@@ -19,7 +19,7 @@ public enum OrganizationType {
     int id;
 
     @Column(name="type")
-    String type;
+    String label;
 
     @Column(name="area")
     String area;

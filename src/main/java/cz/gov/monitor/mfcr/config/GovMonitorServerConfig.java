@@ -1,13 +1,11 @@
 package cz.gov.monitor.mfcr.config;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.HashMap;
-import java.util.Map;
 
 @Data
 @Configuration
@@ -15,22 +13,12 @@ import java.util.Map;
 @ConfigurationProperties(prefix = "monitor.government.mfcr")
 public class GovMonitorServerConfig {
 
-    //@Autowired
-    /*
-        private Server server;
-
-        private String scheme;
-        private String host;
-        private String port;
-        private String path;
-    */
-
     private HashMap<String, String> server;
-    private HashMap<String, String> paths;
+    private HashMap<String, ReportConfig> reports;
 
     public String serviceUrl(String service) {
         StringBuilder sb = new StringBuilder(serverUrl());
-        sb.append(getPaths().get(service));
+        sb.append(getReports().get(service).getPath());
 
         return sb.toString();
     }

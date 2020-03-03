@@ -103,3 +103,11 @@ dependencies {
     testCompile libraries.spring_boot_starter_test
 }
 
+bootRun {
+    jvmArgs=["-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=0.0.0.0:5005"]
+}
+/*
+
+tasks.withType<BootRun> {
+    jvmArgs = listOf("-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=0.0.0.0:5005")
+}*/

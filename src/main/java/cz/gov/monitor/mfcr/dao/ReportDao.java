@@ -14,18 +14,18 @@ import java.util.List;
  * Created by Attila Cseh on 25/01/2020.
  */
 @Service
-public interface MfcrMonitorDao extends CrudRepository<FinancialReport, Long> {
+public interface ReportDao extends CrudRepository<FinancialReport, Long> {
 
-    @Query("Select o from Organization o where id = :dbId")
-    public FinancialReport findOrganizationById(@Param("dbId") String dbId);
+    @Query("select f from FinancialReport f where f.organization.ico = :ico and f.period=:period")
+    public FinancialReport findReportByQuery(@Param("ico")String ico, @Param("period")String period);
 
-    @Query("Select o from Organization o where id = :query")
-    public FinancialReport findOrganizationByQuery(@Param("query") String query);
+    @Query("Select o from Organization o where ico = :ico")
+    public Organization findOrganizationByICO(@Param("ico") String ico);
 
     @Query("select f from FinancialReport f where f.organization = :org")
     public List<FinancialReport> getAllOrganizationReports(@Param("org") Organization org);
 
-    @Query("select n from FinancialReport n where n.organization = :org and n.period = :period")
+    @Query("select f from FinancialReport f where f.organization = :org and f.period = :period")
     public List<FinancialReport> getOrganizationReportsForFiscalPeriod(@Param("org") Organization org,
                                                                        @Param("period") Integer period);
 }

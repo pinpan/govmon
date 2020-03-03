@@ -1,12 +1,10 @@
 package cz.gov.monitor.mfcr.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Data
@@ -26,10 +24,15 @@ public class FinancialReport {
     private Organization organization;
 
     @Column(name="period")
-    private Integer period;
+    private String period;
 
     @OneToMany(mappedBy="report",
-               targetEntity=Expense.class,
+               targetEntity= BalanceStatement.class,
                fetch=FetchType.EAGER)
-    private List<Expense> expenses;
+    private List<BalanceStatement> expenses;
+
+    @OneToMany(mappedBy="report",
+               targetEntity= BalanceStatement.class,
+               fetch=FetchType.EAGER)
+    private List<BalanceStatement> revenues;
 }

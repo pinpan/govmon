@@ -8,6 +8,11 @@ logging:
 spring:
     application:
         name: govmon
+    security:
+        user:
+            name: user
+            password: pass
+            roles: ACTUATOR, USER   # or any other role
     mvc:
         throw-exception-if-no-handler-found: true
     jpa:
@@ -27,19 +32,37 @@ monitor:
                 host: monitor.statnipokladna.cz
                 port:
                 path: /api
-            paths:
-                organization: /ucetni-jednotka
-                report: /ucetni-zaverka/2
+            reports:
+                organization:
+                    path: /ucetni-jednotka
+                all-statements:
+                    path: /ucetni-zaverka/2
+                controllable-statements:
+                    path: /ucetni-zaverka/2
+                    codes: A.I.1, A.I.2, A.I.3, A.I.4, A.I.5, A.I.6, A.I.7, A.I.8, A.I.9, A.I.10, A.I.11, A.I.12, A.I.35, A.I.36
 
-# servlet:
-#    contextPath: /${spring.application.name}
+
+#security:
+#    oauth2:
+#        client:
+#            clientId: a-client
+#            clientSecret: the-client-password
+#        resource:
+#            tokenInfoUri: http://my-spring-oauth2-provider/oauth/check_token
+
+#endpoints:
+#    health:
+#        sensitive: false
 
 management:
+    context-path: /aplication
+    security:
+        enabled: true
+
     endpoints:
         web:
             base-path: /application
             exposure:
                 include: health,info,routes,auditevents,beans,caches,configprops,env,httptrace,logfile,loggers,liquibase,mappings,sessions
-    #health:
-    #    defaults:
-    #        enabled: false
+    health:
+        roles: ACTUATOR

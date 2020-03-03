@@ -645,6 +645,10 @@ curl "https://monitor.statnipokladna.cz/api/ucetni-jednotka/44992785" -H "Accept
   "hasContributoryOrganizations":true
 }
 
+
+{"ic":"44992785","name":"Statut├írn├¡ m─¢sto Brno","shortName":"Brno","nuts":"CZ0642","population":380681,"region":{"name":"Jihomoravsk├╜","fullname":"Jihomoravsk├╜ Kraj","nuts":"CZ064"},"county":"Brno - m─¢sto","address":"Dominik├ínsk├⌐ n├ím. 196/1, 601 67 Brno-st┼Öed","sector":"13130 - M├¡stn├¡ vl├ídn├¡ instituce","creationDate":"1992-07-01","type":{"id":4,"label":"Obec","area":"LOCAL"},"founder":{"ic":"44992785","name":"Statut├írn├¡ m─¢sto Brno","shortName":"Brno","nuts":"CZ0642","population":380681,"region":{"name":"Jihomoravsk├╜","fullname":"Jihomoravsk├╜ Kraj","nuts":"CZ064"},"county":"Brno - m─¢sto","address":"Dominik├ínsk├⌐ n├ím. 196/1, 601 67 Brno-st┼Öed","sector":"13130 - M├¡stn├¡ vl├ídn├¡ instituce","creationDate":"1992-07-01","type":{"id":4,"label":"Obec","area":"LOCAL"},"founder":{"ic":"44992785"}},"hasContributoryOrganizations":true}
+
+
 ------------------------------------------------------
 ----- "https://monitor.statnipokladna.cz/api/ucetni-jednotka/44992785?obdobi=1909" -H "Accept: application/json, text/plain, */*" -H "Referer: https://monitor.statnipokladna.cz/ucetni-jednotka/44992785/prehled?rad=t" -H "Accept-Language: cs" -H "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36"
 {

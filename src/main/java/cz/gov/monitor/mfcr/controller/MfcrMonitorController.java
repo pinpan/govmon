@@ -11,7 +11,9 @@ package cz.gov.monitor.mfcr.controller;
 
 import cz.gov.monitor.mfcr.config.GovMonitorServerConfig;
 import cz.gov.monitor.mfcr.model.FinancialReport;
-import cz.gov.monitor.mfcr.service.MonitorService;
+import cz.gov.monitor.mfcr.model.Organization;
+import cz.gov.monitor.mfcr.service.MfcrMonitorDBService;
+import cz.gov.monitor.mfcr.service.MfcrMonitorRESTService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -36,19 +38,43 @@ public class MfcrMonitorController {
     @Autowired
     private GovMonitorServerConfig govMonitorServerConfig;
 
+    @Autowired
+    private MfcrMonitorDBService mfcrMonitorDBService;
 
     @Autowired
-    private MonitorService monServ;
+    private MfcrMonitorRESTService mfcrMonitorRESTService;
 
     @RequestMapping(method = RequestMethod.GET, path = "/monitor/financialreport")
     @ApiOperation(
             value = "Returns a list of financial reports for given organization and fiscal period.")
     @ApiResponses( value = {
-            @ApiResponse(code = 200, message = "Financial reports list of a organization for a given fiscal period.")
+            @ApiResponse(code = 200, message = "Financial reports list of an organization identified by company ID for a given fiscal period.")
     })
     public FinancialReport getFinancialReport(@RequestParam(value = "ico", defaultValue = "00123456") String ico
-                                                   ,@RequestParam(value = "obdobi", defaultValue = "1909") String period
+                                             ,@RequestParam(value = "obdobi", defaultValue = "1909") String period
                                                     ) {
-        return monServ.fetchReport(ico, period);
+        // 1. Fetch the organization
+        Organization organization = mfcrMonitorDBService.getOrganizationByICO(ico);
+        if (organization == null) {
+            // Feth from REST source
+            organization = mfcrMonitorRESTService.fetchOrganization(ico);
+            // Save to DB
+            mfcrMonitorDBService.saveOrganization(organization);
+        }
+
+        // 2. Fetch organization reports for given period
+        return mfcrMonitorRESTService.fetchReport(ico, period);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/monitor/financialreport/eligible")
+    @ApiOperation(
+            value = "Returns a list of financial reports for given organization and fiscal period.")
+    @ApiResponses( value = {
+            @ApiResponse(code = 200, message = "Financial reports list of an organization identified by company ID for a given fiscal period.")
+    })
+    public FinancialReport getControllableStatements(@RequestParam(value = "ico", defaultValue = "00123456") String ico
+                                                    ,@RequestParam(value = "obdobi", defaultValue = "1909") String period
+                                                    ) {
+        return mfcrMonitorRESTService.fetchReport(ico, period);
     }
 }
