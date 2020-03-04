@@ -16,7 +16,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
-@JsonDeserialize(using = OrganizationTypeDeserializer.class)
+//@JsonDeserialize(using = OrganizationTypeDeserializer.class)
 public enum OrganizationType {
     DISTRICT(4, "Obec", "LOCAL"), MUNICIPLITY(1, "Urad","LOCAL"), UNKNOWN(-1, "Unknown", "LOCAL");
 
@@ -28,7 +28,7 @@ public enum OrganizationType {
 
 
     @JsonCreator
-    public static OrganizationType fromValue(String id) {
+    public static OrganizationType fromValue(@JsonProperty("id") Integer id) {
         if (id == null) {
             return null;
         }
@@ -41,7 +41,7 @@ public enum OrganizationType {
         }
     }
 
-    @JsonCreator
+   /* @JsonCreator
     public static OrganizationType fromJson(@JsonProperty("type") String type) {
         if (type == null) {
             return null;
@@ -53,7 +53,7 @@ public enum OrganizationType {
         }
 
         //valueOf()
-    }
+    }*/
 
 
     @javax.persistence.Id
