@@ -4,14 +4,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import cz.gov.monitor.mfcr.utils.OrganizationTypeDeserializer;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -62,7 +61,6 @@ public class Organization {
      */
     @Enumerated
     @Column(name="org_type")
-    @JsonDeserialize(using = OrganizationTypeDeserializer.class)
     private OrganizationType type;
 
     @OneToMany(mappedBy="organization",

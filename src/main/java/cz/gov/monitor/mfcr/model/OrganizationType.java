@@ -3,6 +3,8 @@ package cz.gov.monitor.mfcr.model;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import cz.gov.monitor.mfcr.utils.OrganizationTypeDeserializer;
 import lombok.*;
 
 import javax.persistence.*;
@@ -14,6 +16,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @JsonFormat(shape = JsonFormat.Shape.OBJECT)
+@JsonDeserialize(using = OrganizationTypeDeserializer.class)
 public enum OrganizationType {
     DISTRICT(4, "Obec", "LOCAL"), MUNICIPLITY(1, "Urad","LOCAL"), UNKNOWN(-1, "Unknown", "LOCAL");
 
@@ -43,13 +46,15 @@ public enum OrganizationType {
         if (type == null) {
             return null;
         }
-
         switch (type) {
             case "1": return MUNICIPLITY;
             case "4": return DISTRICT;
             default: return UNKNOWN;
         }
+
+        //valueOf()
     }
+
 
     @javax.persistence.Id
     @Column(name="id")
@@ -61,7 +66,7 @@ public enum OrganizationType {
 
     @Column(name="area")
     String area;
-
+/*
     public void setId(Integer id) {
         this.id = id;
     }
@@ -72,5 +77,5 @@ public enum OrganizationType {
 
     public void setLabel(String label) {
         this.label = label;
-    }
+    }*/
 }

@@ -35,7 +35,7 @@ CREATE TABLE organization \
 (                         \
 id             INT AUTO_INCREMENT, \
 name           varchar(255),       \
-ico            varchar(8),         \
+ico            varchar(8) UNIQUE,  \
 short_name     varchar(50),        \
 nuts           varchar(255),       \
 county         varchar(255),       \

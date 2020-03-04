@@ -23,7 +23,8 @@ public class OrganizationTypeDeserializer extends StdDeserializer<OrganizationTy
     @Override
     public OrganizationType deserialize(JsonParser jsonParser, DeserializationContext ctxt) throws IOException, JsonProcessingException {
         String textToParse = jsonParser.getText();
-
+        // parser._symbols._names
+        //ctxt.getParser().getCurrentToken() get().get )
         return OrganizationType.UNKNOWN;
     }
 
