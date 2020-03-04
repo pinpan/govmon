@@ -2,8 +2,6 @@ package cz.gov.monitor.mfcr.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import cz.gov.monitor.mfcr.utils.OrganizationTypeDeserializer;
 import lombok.*;
 
 import javax.persistence.*;
@@ -23,6 +21,7 @@ public class Organization {
     @javax.persistence.Id
     @Column(name="id")
     @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @JsonIgnore
     private Long id;
 
     /**
@@ -66,6 +65,7 @@ public class Organization {
     @OneToMany(mappedBy="organization",
             targetEntity=FinancialReport.class,
             fetch=FetchType.EAGER)
+    @ToString.Exclude
     @JsonIgnore
     private List<FinancialReport> financialReports;
 

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public interface OrganizationDao extends CrudRepository<Organization, Long> {
 
     @Query("Select o from Organization o where ico = :ico")
-    public Organization findOrganizationByIco(@Param("ico") String ico);
+    public Organization fetchOrganizationByICO(@Param("ico") String ico);
 
     @Query("Select o from Organization o where id = :query")
     public Organization findOrganizationByQuery(@Param("query") String query);

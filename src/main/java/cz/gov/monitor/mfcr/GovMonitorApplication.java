@@ -2,7 +2,7 @@ package cz.gov.monitor.mfcr;
 
 import cz.gov.monitor.mfcr.config.GovMonitorServerConfig;
 import cz.gov.monitor.mfcr.utils.BuildInfo;
-import cz.gov.monitor.mfcr.dao.ReportDao;
+import cz.gov.monitor.mfcr.dao.FinancialReportDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -18,7 +18,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableScheduling
 @EnableConfigurationProperties(GovMonitorServerConfig.class)
-@EnableJpaRepositories(basePackageClasses={ReportDao.class})
+@EnableJpaRepositories(basePackageClasses={FinancialReportDao.class})
 public class GovMonitorApplication implements ApplicationListener<ApplicationReadyEvent> {
     private static final Logger logger = LoggerFactory.getLogger(GovMonitorApplication.class);
 

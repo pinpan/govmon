@@ -1,12 +1,13 @@
 package cz.gov.monitor.mfcr.controller;
 
 import cz.gov.monitor.mfcr.model.FinancialReport;
+import cz.gov.monitor.mfcr.model.Organization;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class FinancialReportResponse {
+public class GetOrganizationResponse {
 
-    private FinancialReport financialReport;
+    private Organization organization;
 }

@@ -1,8 +1,41 @@
+
+
 https://monitor.statnipokladna.cz/api/ucetni-zaverka/2?obdobi=1909&ic=44992785
 https://monitor.statnipokladna.cz/api/ucetni-zaverka/2?obdobi=1909&ic=44992785
 
 curl https://monitor.statnipokladna.cz/api/ucetni-zaverka/2?obdobi=1909&ic=44992785
 
+
+/*
+"expenses":[
+{
+"name":"N├üKLADY CELKEM",
+"code":"A.",
+"mainActivity":8.6031396783E9,
+"economicActivity":1.00475413709E9,
+"mainActivityPrev":1.232743269034E10,
+"economicActivityPrev":1.78342113717E9,
+"synAccount":"-",
+"lineNumber":0
+}
+.....
+}
+
+"revenues":[
+{
+"name":"V├¥NOSY CELKEM",
+"code":"B.",
+"mainActivity":1.160883985309E10,
+"economicActivity":1.75061262657E9,
+"mainActivityPrev":1.475137581354E10,
+"economicActivityPrev":2.54592486814E9,
+"synAccount":"-",
+"lineNumber":0
+}
+.....
+}
+
+*/
 
 
 curl "https://monitor.statnipokladna.cz/api/vyhledavani?text=Brno" -H "Accept: application/json, text/plain, */*" -H "Referer: https://monitor.statnipokladna.cz/vyhledavani?text=Brno&type=0" -H "Accept-Language: cs"

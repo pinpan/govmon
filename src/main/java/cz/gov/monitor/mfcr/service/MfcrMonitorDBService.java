@@ -1,7 +1,7 @@
 package cz.gov.monitor.mfcr.service;
 
 import cz.gov.monitor.mfcr.dao.BalanceStatementDao;
-import cz.gov.monitor.mfcr.dao.ReportDao;
+import cz.gov.monitor.mfcr.dao.FinancialReportDao;
 import cz.gov.monitor.mfcr.dao.OrganizationDao;
 import cz.gov.monitor.mfcr.model.BalanceStatement;
 import cz.gov.monitor.mfcr.model.FinancialReport;
@@ -16,7 +16,7 @@ import java.util.Optional;
 public class MfcrMonitorDBService {
 
     @Autowired
-    private ReportDao reportDao;
+    private FinancialReportDao reportDao;
 
     @Autowired
     private OrganizationDao organizationDao;
@@ -31,8 +31,11 @@ public class MfcrMonitorDBService {
     }
 
     public Iterable<FinancialReport> fetchAllReports() {
-
         return reportDao.findAll();
+    }
+
+    public List<FinancialReport> fetchAllOrganizationReports(Organization organization) {
+        return reportDao.getAllOrganizationReports(organization);
     }
 
     public void saveReports(List<FinancialReport> reports) {
@@ -44,8 +47,8 @@ public class MfcrMonitorDBService {
     }
 
 
-    public Organization getOrganizationByICO(String ico) {
-        return organizationDao.findOrganizationByIco(ico);
+    public Organization fetchOrganizationByICO(String ico) {
+        return organizationDao.fetchOrganizationByICO(ico);
     }
 
     public void saveOrganization(Organization organization) {

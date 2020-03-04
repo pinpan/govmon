@@ -2,14 +2,13 @@ package cz.gov.monitor.mfcr.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -19,6 +18,7 @@ public class FinancialReport {
 
     @ManyToOne(optional=false)
     @JoinColumn(name="organization_id",referencedColumnName="id")
+    @ToString.Exclude
     private Organization organization;
 
     @Column(name="period")

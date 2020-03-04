@@ -21,6 +21,8 @@ import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
@@ -50,33 +52,62 @@ public class MfcrMonitorController {
     @ApiResponses( value = {
             @ApiResponse(code = 200, message = "Financial reports list of an organization identified by company ID for a given fiscal period.")
     })
-    public FinancialReportResponse getFinancialReport(@RequestParam(value = "ico", defaultValue = "00123456") String ico
-                                             ,@RequestParam(value = "obdobi", defaultValue = "1909") String period
+    public GetFinancialReportResponse getFinancialReport(@RequestParam(value = "ico", defaultValue = "00123456") String ico
+                                             , @RequestParam(value = "obdobi", defaultValue = "1909") String period
                                                     ) {
         // 1. Fetch the organization
-        Organization organization = mfcrMonitorDBService.getOrganizationByICO(ico);
-        if (organization == null) {
-            // Feth from REST source
-            organization = mfcrMonitorRESTService.fetchOrganization(ico);
-            // Save to DB
-            mfcrMonitorDBService.saveOrganization(organization);
-        }
+        Organization organization = getOrganization(ico);
 
         // 2. Fetch organization reports for given period
         FinancialReport report = mfcrMonitorRESTService.fetchReport(ico, period);
         report.setOrganization(organization);
-        return new FinancialReportResponse(report);
+        return new GetFinancialReportResponse(report);
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/monitor/financialreport/eligible")
+    @RequestMapping(method = RequestMethod.GET, path = "/monitor/organization")
     @ApiOperation(
-            value = "Returns a list of financial reports for given organization and fiscal period.")
+            value = "Returns an Organization data view, optionally with all financial reports.")
     @ApiResponses( value = {
-            @ApiResponse(code = 200, message = "Financial reports list of an organization identified by company ID for a given fiscal period.")
+            @ApiResponse(code = 200, message = "An organization data and its financial reports.")
     })
-    public FinancialReportResponse getControllableStatements(@RequestParam(value = "ico", defaultValue = "00123456") String ico
-                                                    ,@RequestParam(value = "obdobi", defaultValue = "1909") String period
-                                                    ) {
-        return new FinancialReportResponse(mfcrMonitorRESTService.fetchReport(ico, period));
+    public GetOrganizationResponse getOrganization(@RequestParam(value = "ico", defaultValue = "00123456") String ico
+                                                  ,@RequestParam(value = "fetch_reports", defaultValue = "false") Boolean showReports
+                                                  ) {
+        Organization organization = getOrganization(ico);
+
+        if (Boolean.TRUE.equals(showReports)) {
+            List<FinancialReport> reports = mfcrMonitorDBService.fetchAllOrganizationReports(organization);
+            if ((reports == null)  || reports.isEmpty()){
+                Map<Integer, FinancialReport> reportsMap = mfcrMonitorRESTService.fetchOrganizationReports(organization.getIco());
+            }
+            organization.setFinancialReports(reports);
+        }
+
+
+        return new GetOrganizationResponse(organization);
     }
+
+    private Organization getOrganization(@RequestParam(value = "ico", defaultValue = "00123456") String ico) {
+        Organization organization = mfcrMonitorDBService.fetchOrganizationByICO(ico);
+        if (organization == null) {
+            // Feth from REST source
+            organization = mfcrMonitorRESTService.fetchOrganizationByICO(ico);
+            // Save to DB
+            mfcrMonitorDBService.saveOrganization(organization);
+        }
+
+        return organization;
+    }
+
+    /*public List<FinancialReport> getOrganizationReports(@RequestParam(value = "ico", defaultValue = "00123456") String ico) {
+        Organization organization = mfcrMonitorDBService.fetchOrganizationByICO(ico);
+        if (organization == null) {
+            // Feth from REST source
+            organization = mfcrMonitorRESTService.fetchOrganizationByICO(ico);
+            // Save to DB
+            mfcrMonitorDBService.saveOrganization(organization);
+        }
+
+        return organization;
+    }*/
 }

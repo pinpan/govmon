@@ -22,17 +22,6 @@ spring:
     hibernate:
         dialect: mysql
 
-#monitor:
-#    government:
-#        mfcr:
-#           server:
-#               scheme: https
-#                host: monitor.statnipokladna.cz
-#                port:
-#               path: /api
-#            paths:
-#                organization: /ucetni-jednotka
-#                report: /ucetni-zaverka/2
 
 monitor:
     government:
@@ -45,12 +34,11 @@ monitor:
             reports:
                 organization:
                     path: /ucetni-jednotka
-                all-statements:
+                all_statements:
                     path: /ucetni-zaverka/2
-                controllable-statements:
+                controllable_statements:
                     path: /ucetni-zaverka/2
                     codes: A.I.1, A.I.2, A.I.3, A.I.4, A.I.5, A.I.6, A.I.7, A.I.8, A.I.9, A.I.10, A.I.11, A.I.12, A.I.35, A.I.36
-
 
 servlet:
     contextPath: /${spring.application.name}

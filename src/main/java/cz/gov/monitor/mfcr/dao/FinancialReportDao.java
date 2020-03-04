@@ -14,7 +14,7 @@ import java.util.List;
  * Created by Attila Cseh on 25/01/2020.
  */
 @Service
-public interface ReportDao extends CrudRepository<FinancialReport, Long> {
+public interface FinancialReportDao extends CrudRepository<FinancialReport, Long> {
 
     @Query("select f from FinancialReport f where f.organization.ico = :ico and f.period=:period")
     public FinancialReport findReportByQuery(@Param("ico")String ico, @Param("period")String period);

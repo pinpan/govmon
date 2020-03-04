@@ -1,9 +1,7 @@
 package cz.gov.monitor.mfcr.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -13,43 +11,13 @@ import javax.persistence.*;
 @Entity
 @Table(name="balance_statement  ")
 public class BalanceStatement {
-    /*
-    "expenses":[
-    {
-        "name":"N├üKLADY CELKEM",
-        "code":"A.",
-        "mainActivity":8.6031396783E9,
-        "economicActivity":1.00475413709E9,
-        "mainActivityPrev":1.232743269034E10,
-        "economicActivityPrev":1.78342113717E9,
-        "synAccount":"-",
-        "lineNumber":0
-    }
-    .....
-  }
-
-  "revenues":[
-    {
-      "name":"V├¥NOSY CELKEM",
-      "code":"B.",
-      "mainActivity":1.160883985309E10,
-      "economicActivity":1.75061262657E9,
-      "mainActivityPrev":1.475137581354E10,
-      "economicActivityPrev":2.54592486814E9,
-      "synAccount":"-",
-      "lineNumber":0
-    }
-    .....
-    }
-
-   */
-
     /**
      * DB Id
      */
     @javax.persistence.Id
     @Column(name="id")
     @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @JsonIgnore
     private Long id;
 
     @Column(name="name")
@@ -79,5 +47,6 @@ public class BalanceStatement {
     @ManyToOne(optional=false)
     @JoinColumn(name="report_id",referencedColumnName="id")
     @JsonIgnore
+    @ToString.Exclude
     private FinancialReport report;
 }

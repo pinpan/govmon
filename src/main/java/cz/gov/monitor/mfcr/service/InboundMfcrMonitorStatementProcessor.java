@@ -21,16 +21,15 @@ public class InboundMfcrMonitorStatementProcessor implements MfcrMonitorStatemen
     @Override
     public void processReports(List<FinancialReport> financialReports, String ico, String period) {
 
-        Organization organization = mfcrMonitorDBService.getOrganizationByICO(ico);
+        Organization organization = mfcrMonitorDBService.fetchOrganizationByICO(ico);
         if (organization == null) {
-            organization = mfcrMonitorRESTService.fetchOrganization(ico);
+            organization = mfcrMonitorRESTService.fetchOrganizationByICO(ico);
         }
 
         for (FinancialReport financialReport : financialReports) {
             processReport(financialReport, ico, period);
         }
     }
-
 
     private void processReport(FinancialReport financialReport, String ico, String period, Organization organization) {
         Optional<FinancialReport> optional = mfcrMonitorDBService.findReportByQuery(ico, period);
@@ -53,7 +52,7 @@ public class InboundMfcrMonitorStatementProcessor implements MfcrMonitorStatemen
     }
 
     public void processReport(FinancialReport financialReport, String ico, String period) {
-        Organization organization = mfcrMonitorDBService.getOrganizationByICO(ico);
+        Organization organization = mfcrMonitorDBService.fetchOrganizationByICO(ico);
 
         processReport(financialReport, ico, period, organization);
     }
@@ -62,5 +61,4 @@ public class InboundMfcrMonitorStatementProcessor implements MfcrMonitorStatemen
     public void processOrganization(Organization organization) {
 
     }
-
 }
