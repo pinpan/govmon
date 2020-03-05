@@ -84,14 +84,10 @@ public class MfcrMonitorRESTService {
 
 
         // 1. Fetch all fiscal periods and forEach fetch corresponding financial report
-        String serviceUrl = govMonitorServerConfig.serviceUrl("fiscal_period");
+        List<FiscalPeriod> fiscalPeriods = getFiscalPeriods();
+        if ((fiscalPeriods == null) || fiscalPeriods.isEmpty()) {
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.set("Accept-Language", "cs");
-        headers.set("Accept", "application/json, text/plain, */*");
-        HttpEntity<HttpHeaders> httpEntity = new HttpEntity(null, headers);
-
-        List<FiscalPeriod> fiscalPeriods = restClient.fetchResourcesList(serviceUrl, httpEntity, fiscalPeriodsListTypeRef);
+        }
         Map<Integer, FinancialReport> financialReports = new HashMap<Integer, FinancialReport>();
         if ((fiscalPeriods != null) && !fiscalPeriods.isEmpty()) {
 
@@ -105,6 +101,17 @@ public class MfcrMonitorRESTService {
         }
         return financialReports;
    }
+
+    private List<FiscalPeriod> getFiscalPeriods() {
+        String serviceUrl = govMonitorServerConfig.serviceUrl("fiscal_period");
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Accept-Language", "cs");
+        headers.set("Accept", "application/json, text/plain, */*");
+        HttpEntity<HttpHeaders> httpEntity = new HttpEntity(null, headers);
+
+        return restClient.fetchResourcesList(serviceUrl, httpEntity, fiscalPeriodsListTypeRef);
+    }
 
     /*public Map<Integer, FinancialReport> fetchOrganizatzionReports(String ico) {
         return null;

@@ -49,10 +49,28 @@ public class Organization {
     @Column(name="nuts")
     private String nuts;
 
+    /**
+     *  county
+     */
+    @Column(name="county")
     private String county;       //:"Brno - m─¢sto",
+
+    /**
+     * address
+     */
+    @Column(name="address")
     private String address;      //:"Dominik├ínsk├⌐ n├ím. 196/1, 601 67 Brno-st┼Öed",
+
+    /**
+     * sector
+     */
+    @Column(name="sector")
     private String sector;       //:"13130 - M├¡stn├¡ vl├ídn├¡ instituce",
 
+    /**
+     * creationDate
+     */
+    @Column(name="creation_date")
     private String creationDate; //:"1992-07-01",
 
     /**
@@ -69,4 +87,15 @@ public class Organization {
     @JsonIgnore
     private List<FinancialReport> financialReports;
 
+    public void setFinancialReports(List<FinancialReport> reports) {
+        financialReports = reports;
+        _financialReports = reports;
+    }
+
+    @Transient
+    private List<FinancialReport> _financialReports;
+
+    List<FinancialReport> get_FinancialReports() {
+        return _financialReports;
+    }
 }

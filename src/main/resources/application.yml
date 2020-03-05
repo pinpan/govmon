@@ -24,6 +24,10 @@ spring:
     hibernate:
         dialect: mysql
 
+server:
+    servlet:
+        context-path: /${spring.application.name}
+
 monitor:
     government:
         mfcr:
@@ -57,13 +61,13 @@ monitor:
 #        sensitive: false
 
 management:
-    context-path: /aplication
+    context-path: /management
     security:
         enabled: true
 
     endpoints:
         web:
-            base-path: /application
+            base-path: /management
             exposure:
                 include: health,info,routes,auditevents,beans,caches,configprops,env,httptrace,logfile,loggers,liquibase,mappings,sessions
     health:
