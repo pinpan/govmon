@@ -102,7 +102,7 @@ public class MfcrMonitorRESTService {
         return financialReports;
    }
 
-    private List<FiscalPeriod> getFiscalPeriods() {
+    public List<FiscalPeriod> getFiscalPeriods() {
         String serviceUrl = govMonitorServerConfig.serviceUrl("fiscal_period");
 
         HttpHeaders headers = new HttpHeaders();

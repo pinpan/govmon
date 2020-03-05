@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @EnableSwagger2
 @EnableWebMvc
 @Import(BeanValidatorPluginsConfiguration.class)
-public class SwaggerConfiguration  extends WebMvcConfigurationSupport {
+public class SwaggerConfiguration {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -41,12 +41,16 @@ public class SwaggerConfiguration  extends WebMvcConfigurationSupport {
                 ));
     }
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("swagger-ui.html")
-                .addResourceLocations("classpath:/META-INF/resources/");
-        registry.addResourceHandler("/webjars/**")
-                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+    @Bean
+    public WebMvcConfigurer webMvcConfigurer() {
+        return new WebMvcConfigurer()
+        {
+            @Override
+            public void addResourceHandlers( ResourceHandlerRegistry registry )
+            {
+                registry.addResourceHandler( "swagger-ui.html" ).addResourceLocations( "classpath:/META-INF/resources/" );
+                registry.addResourceHandler( "/webjars/**" ).addResourceLocations( "classpath:/META-INF/resources/webjars/" );
+            }
+        };
     }
-
 }

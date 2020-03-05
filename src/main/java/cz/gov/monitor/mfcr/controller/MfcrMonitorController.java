@@ -11,6 +11,7 @@ package cz.gov.monitor.mfcr.controller;
 
 import cz.gov.monitor.mfcr.config.GovMonitorServerConfig;
 import cz.gov.monitor.mfcr.model.FinancialReport;
+import cz.gov.monitor.mfcr.model.FiscalPeriod;
 import cz.gov.monitor.mfcr.model.Organization;
 import cz.gov.monitor.mfcr.service.MfcrMonitorDBService;
 import cz.gov.monitor.mfcr.service.MfcrMonitorRESTService;
@@ -46,7 +47,7 @@ public class MfcrMonitorController {
     @Autowired
     private MfcrMonitorRESTService mfcrMonitorRESTService;
 
-    @RequestMapping(method = RequestMethod.GET, path = "/monitor/financialreport")
+    @RequestMapping(method = RequestMethod.GET, path = "/monitor/financial_report")
     @ApiOperation(
             value = "Returns a list of financial reports for given organization and fiscal period.")
     @ApiResponses( value = {
@@ -85,6 +86,19 @@ public class MfcrMonitorController {
 
 
         return new GetOrganizationResponse(organization);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/monitor/fiscal_periods")
+    @ApiOperation(
+            value = "Returns list of fiscal periods for which master source has data regardless of selected organization.")
+    @ApiResponses( value = {
+            @ApiResponse(code = 200, message = "A list of fiscal periods information.")
+    })
+    public List<FiscalPeriod> getFiscalPEriods() {
+        // TODO: Get from DB firs
+        List<FiscalPeriod> fiscalPEriods = mfcrMonitorRESTService.getFiscalPeriods();
+
+        return fiscalPEriods;
     }
 
     private Organization getOrganization(@RequestParam(value = "ico", defaultValue = "00123456") String ico) {
