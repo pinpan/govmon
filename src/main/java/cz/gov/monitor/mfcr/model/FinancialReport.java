@@ -31,12 +31,12 @@ public class FinancialReport {
     private Long id;
 
     @OneToMany(mappedBy="report",
-               targetEntity= BalanceStatement.class,
+               targetEntity= ExpenseStatement.class,
                fetch=FetchType.EAGER)
-    private List<BalanceStatement> expenses;
+    private List<ExpenseStatement> expenses;
 
     @OneToMany(mappedBy="report",
-               targetEntity= BalanceStatement.class,
+               targetEntity= RevenueStatement.class,
                fetch=FetchType.EAGER)
-    private List<BalanceStatement> revenues;
+    private List<RevenueStatement> revenues;
 }

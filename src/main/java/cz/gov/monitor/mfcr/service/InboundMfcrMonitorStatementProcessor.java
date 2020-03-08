@@ -36,18 +36,20 @@ public class InboundMfcrMonitorStatementProcessor implements MfcrMonitorStatemen
         FinancialReport fr = (optional.isPresent()) ? optional.get() : null;
         if (fr == null) {
             fr = financialReport;
-        }
-        fr.setOrganization(organization);
-        fr.setPeriod(period);
-        mfcrMonitorDBService.saveReport(fr);
-        for (BalanceStatement statement: fr.getExpenses()) {
-            statement.setReport(fr);
-            mfcrMonitorDBService.saveStatement(statement);
-        }
 
-        for (BalanceStatement statement: fr.getRevenues()) {
-            statement.setReport(fr);
-            mfcrMonitorDBService.saveStatement(statement);
+            fr.setOrganization(organization);
+            fr.setPeriod(period);
+            mfcrMonitorDBService.saveReport(fr);
+
+            for (BalanceStatement statement: fr.getExpenses()) {
+                statement.setReport(fr);
+                mfcrMonitorDBService.saveStatement(statement);
+            }
+
+            for (BalanceStatement statement: fr.getRevenues()) {
+                statement.setReport(fr);
+                mfcrMonitorDBService.saveStatement(statement);
+            }
         }
     }
 

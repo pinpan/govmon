@@ -9,7 +9,13 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="balance_statement  ")
+@Table(name="balance_statement")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(
+//        discriminatorType = DiscriminatorType.INTEGER,
+        name = "statement_type"
+//        , columnDefinition = "TINYINT(1)"
+)
 public class BalanceStatement {
     /**
      * DB Id
@@ -19,6 +25,11 @@ public class BalanceStatement {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @JsonIgnore
     private Long id;
+/*
+
+    @Column(name="statement_type_id", updatable = false, insertable = false)
+    private Integer statementTypeId;
+*/
 
     @Column(name="name")
     private String name; //":"N├üKLADY CELKEM",

@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class StringUtils {
 
+    public static final String[] EMPTY_STRING_ARRAY = new String[]{};
+
     public static StringBuilder addParams(StringBuilder sb, Map<String, String> paramsMap) {
         if (!paramsMap.isEmpty()) {
             sb.append("?");

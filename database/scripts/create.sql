@@ -9,6 +9,7 @@ GRANT ALL PRIVILEGES ON govmon.* TO 'moni'@'%' WITH GRANT OPTION;
 CREATE TABLE balance_statement \
 (                    \
 id             INT AUTO_INCREMENT, \
+statement_type         varchar(50), \
 name                   varchar(255), \
 code                   varchar(255), \
 main_activity          varchar(255), \

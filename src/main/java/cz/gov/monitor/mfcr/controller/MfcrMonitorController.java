@@ -10,20 +10,22 @@
 package cz.gov.monitor.mfcr.controller;
 
 import cz.gov.monitor.mfcr.config.GovMonitorServerConfig;
-import cz.gov.monitor.mfcr.model.FinancialReport;
-import cz.gov.monitor.mfcr.model.FiscalPeriod;
-import cz.gov.monitor.mfcr.model.Organization;
+import cz.gov.monitor.mfcr.model.*;
 import cz.gov.monitor.mfcr.service.MfcrMonitorDBService;
 import cz.gov.monitor.mfcr.service.MfcrMonitorRESTService;
+import cz.gov.monitor.mfcr.utils.StringUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
@@ -47,32 +49,104 @@ public class MfcrMonitorController {
     @Autowired
     private MfcrMonitorRESTService mfcrMonitorRESTService;
 
-    @RequestMapping(method = RequestMethod.GET, path = "/monitor/financial_report")
+    @RequestMapping(method = RequestMethod.GET, path = "/monitor/financial_report", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(
             value = "Returns a list of financial reports for given organization and fiscal period.")
     @ApiResponses( value = {
             @ApiResponse(code = 200, message = "Financial reports list of an organization identified by company ID for a given fiscal period.")
     })
     public GetFinancialReportResponse getFinancialReport(@RequestParam(value = "ico", defaultValue = "00123456") String ico
-                                             , @RequestParam(value = "obdobi", defaultValue = "1909") String period
+                                                       , @RequestParam(value = "obdobi", defaultValue = "1909") String period
+                                                       , @RequestBody(required = false) StatementFilter statementFilter
                                                     ) {
         // 1. Fetch the organization
         Organization organization = getOrganization(ico);
 
         // 2. Fetch organization reports for given period
-        FinancialReport report = mfcrMonitorRESTService.fetchReport(ico, period);
-        report.setOrganization(organization);
+        FinancialReport report = null;
+        Optional<FinancialReport> optionalReportFromDB = mfcrMonitorDBService.findReportByQuery(ico, period);
+        if ((optionalReportFromDB != null)  && optionalReportFromDB.isPresent()) {
+            report = optionalReportFromDB.get();
+        } else {
+            report = mfcrMonitorRESTService.fetchReport(ico, period);
+            report.setOrganization(organization);
+
+            mfcrMonitorDBService.saveReport(report);
+        }
+
+        // Apply statements filter
+        if ((statementFilter != null) && (statementFilter.getExpensesFilter() != null) && !statementFilter.getExpensesFilter().isEmpty()) {
+
+            List<String> filterValues = preprocess(statementFilter.getExpensesFilter());
+            if ((filterValues != null) && !filterValues.isEmpty()) {
+
+                List<ExpenseStatement> theExpenses = new ArrayList<ExpenseStatement>();
+                for (ExpenseStatement statement : report.getExpenses()) {
+                    for (String filterValue : filterValues) { // For each filter value test every statement record
+
+                        if (filterValue.equals(statement.getCode())) {
+                            theExpenses.add(statement);
+                        }
+                    }
+                }
+                report.setExpenses(theExpenses);
+            }
+
+            if ((statementFilter != null) && (statementFilter.getRevenuesFilter() != null) && !statementFilter.getRevenuesFilter().isEmpty()) {
+                filterValues = preprocess(statementFilter.getRevenuesFilter());
+
+                List<RevenueStatement> theRevenues = new ArrayList<RevenueStatement>();
+                for (RevenueStatement statement : report.getRevenues()) {
+                    for (String filterValue : filterValues) { // For each filter value test every statement record
+                        if (filterValue.equals(statement.getCode())) {
+                            theRevenues.add(statement);
+                        }
+                    }
+                }
+                report.setRevenues(theRevenues);
+            }
+        }
+
         return new GetFinancialReportResponse(report);
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/monitor/organization")
+    private List<String> preprocess(String statementsFilter) {
+        List<String> values = new ArrayList<String>();
+
+        String[] filterValues = statementsFilter.split(";");
+        for (String value : filterValues) {
+            String[] parts = value.split("-");
+            if (parts.length > 1) {
+                String[] segmentsStart = parts[0].split("\\.");
+                Integer segmentStart = Integer.valueOf(segmentsStart[2]);
+
+                String[] segmentsEnd = parts[1].split("\\.");
+                Integer segmentEnd = Integer.valueOf(segmentsEnd[2]);
+
+                for (int n=segmentStart; n<=segmentEnd; n++) {
+                    String valueN = new StringBuilder()
+                                    .append(segmentsStart[0]).append(".")
+                                    .append(segmentsStart[1]).append(".")
+                                    .append(n).append(".")
+                                    .toString();
+                    values.add(valueN);
+                }
+            } else {
+                values.add(parts[0]);
+            }
+        }
+
+        return values;
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "/monitor/organization", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(
             value = "Returns an Organization data view, optionally with all financial reports.")
     @ApiResponses( value = {
             @ApiResponse(code = 200, message = "An organization data and its financial reports.")
     })
-    public GetOrganizationResponse getOrganization(@RequestParam(value = "ico", defaultValue = "00123456") String ico
-                                                  ,@RequestParam(value = "fetch_reports", defaultValue = "false") Boolean showReports
+    public GetOrganizationResponse getOrganization( @RequestParam(value = "ico", defaultValue = "00123456") String ico
+                                                  , @RequestParam(value = "fetch_reports", defaultValue = "false") Boolean showReports
                                                   ) {
         Organization organization = getOrganization(ico);
 
@@ -84,11 +158,10 @@ public class MfcrMonitorController {
             organization.setFinancialReports(reports);
         }
 
-
         return new GetOrganizationResponse(organization);
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/monitor/fiscal_periods")
+    @RequestMapping(method = RequestMethod.GET, path = "/monitor/fiscal_periods", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(
             value = "Returns list of fiscal periods for which master source has data regardless of selected organization.")
     @ApiResponses( value = {

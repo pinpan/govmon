@@ -82,7 +82,7 @@ public class Organization {
 
     @OneToMany(mappedBy="organization",
             targetEntity=FinancialReport.class,
-            fetch=FetchType.EAGER)
+            fetch=FetchType.LAZY)
     @ToString.Exclude
     @JsonIgnore
     private List<FinancialReport> financialReports;
