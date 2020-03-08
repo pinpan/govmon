@@ -175,15 +175,17 @@ public class MfcrMonitorController {
     public List<FiscalPeriod> getFiscalPeriods() {
         Iterable<FiscalPeriod> fiscalPeriods =  mfcrMonitorDBService.fetchAlFiscalPeriods();
         //If not found in the DB, Get from Rest and save to DB
-        if (fiscalPeriods == null) {
-            fiscalPeriods = mfcrMonitorRESTService.getFiscalPeriods();
+        if ((fiscalPeriods != null)  && fiscalPeriods.iterator().hasNext()) {
+            List<FiscalPeriod> result = new ArrayList<>();
+            fiscalPeriods.forEach( p -> {
+                result.add(p);
+            });
+            return result;
         }
 
-        List<FiscalPeriod> result = new ArrayList<>();
-        fiscalPeriods.forEach( p -> {
-            result.add(p);
-        });
-        return result;
+        List fiscalPeriodsList = mfcrMonitorRESTService.getFiscalPeriods();
+        mfcrMonitorDBService.saFiscalPEriods(fiscalPeriodsList);
+        return fiscalPeriodsList;
     }
 
     private Organization getOrganization(@RequestParam(value = "ico", defaultValue = "00123456") String ico) {

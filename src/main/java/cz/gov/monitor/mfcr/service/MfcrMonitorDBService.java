@@ -69,4 +69,8 @@ public class MfcrMonitorDBService {
     public void saveStatement(BalanceStatement statement) {
         balanceStatementDao.save(statement);
     }
+
+    public void saFiscalPEriods(Iterable<FiscalPeriod> fiscalPeriods) {
+
+    }
 }

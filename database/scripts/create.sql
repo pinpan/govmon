@@ -39,24 +39,24 @@ insert into organization_type (type, area) values ("1", "Urad");
 CREATE TABLE fiscal_period  \
 (                         \
     id             INT AUTO_INCREMENT, \
-    fiscal_year                 INT,            \
-    loadID                      INTEGER UNIQUE,     \
-    fiscal_month                VARCHAR(25),        \
-    isQuarter                   BOOLEAN,            \
-    isYear                      BOOLEAN,            \
-    balanceSheetProfitLoss      BOOLEAN,            \
-    cashFlowEquityCapital       BOOLEAN,            \
-    finM                        BOOLEAN,            \
-    finU                        BOOLEAN,            \
-    statementsAfterCorrections  BOOLEAN,            \
-    clearanceOfAccounts         BOOLEAN,            \
-    finSPO                      BOOLEAN,            \
-    monitoring                  BOOLEAN,            \
-    budgetApproved              BOOLEAN,            \
-    budgetPreparation           BOOLEAN,            \
-    ucjed                       BOOLEAN,            \
-    transactionData             BOOLEAN,            \
-    label                       VARCHAR(255),       \
+    fiscal_year                  INT,            \
+    load_id                      INTEGER UNIQUE,     \
+    fiscal_month                 VARCHAR(25),        \
+    is_quarter                    BOOLEAN,            \
+    is_year                       BOOLEAN,            \
+    balance_sheet_profit_loss    BOOLEAN,            \
+    cash_flow_equity_capital     BOOLEAN,            \
+    fin_m                         BOOLEAN,            \
+    fin_u                         BOOLEAN,            \
+    statements_after_corrections BOOLEAN,            \
+    clearance_of_accounts        BOOLEAN,            \
+    fin_spo                       BOOLEAN,            \
+    monitoring                   BOOLEAN,            \
+    budget_approved              BOOLEAN,            \
+    budget_preparation           BOOLEAN,            \
+    ucjed                        BOOLEAN,            \
+    transaction_data             BOOLEAN,            \
+    label                        VARCHAR(255),       \
     PRIMARY KEY (id)                   \
 ) ENGINE = InnoDB;
 
