@@ -4,6 +4,9 @@ logging:
         org.springframework: WARN
         org.apache.catalina: WARN
         org.springframework.boot.web.embedded.tomcat.TomcatWebServer: INFO
+        org.hibernate.SQL: debug
+        org.hibernate.type.descriptor.sql: trace
+        org.hibernate.type: trace
 
 spring:
     resources:

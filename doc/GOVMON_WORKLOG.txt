@@ -1,0 +1,887 @@
+GOVMON_WORKLOG
+--------------------------------------------------------------------------------
+20200308
+--------
+SQL for selecting revenues from financial_report when organization is loaded?
+    -> DefaultInitializeCollectionEventListener
+        -> onInitializeCollection
+
+
+    -> AbstractLoadPlanBasedCollectionInitializer
+         sqlStatemnts: select revenues0_.report_id as report_11_0_0_, revenues0_.id as id2_0_0_, revenues0_.id as id2_0_1_, revenues0_.code as code3_0_1_, revenues0_.economic_activity as economic4_0_1_, revenues0_.economic_activity_prev as economic5_0_1_, revenues0_.line_number as line_num6_0_1_, revenues0_.main_activity as main_act7_0_1_, revenues0_.main_activity_prev as main_act8_0_1_, revenues0_.name as name9_0_1_, revenues0_.report_id as report_11_0_1_, revenues0_.syn_account as syn_acc10_0_1_ from balance_statement revenues0_ where revenues0_.report_id=?
+            ??? Missing "statement_type" 
+
+
+    > AbstractLoadPlanBased
+            executeLoad
+                  PersistenceContext persistenceContext = session.getPersistenceContextInternal();
+              ??? Already has pefetched all Statments as Revenues????
+      
+      Then results = loadQueryDetails.getResultSetProcessor().extractResults(
+        JUST FETCHES THE DETAILS into the Revenues collection
+  
+  
+  !!! AbstractPErsistentCollection (doWork) is already populated with all records !!!
+           see initialize(final boolean writing) L 550
+           
+           Load in StatefulPersistenceContext.initializeNonLazyCollections L997
+           
+   !!!     At this moment the stateful context already has fetched all the 
+                Revenues as only collection items type
+================================================================================
+{
+   "expenses":[
+      {
+         "name":"NÁKLADY CELKEM",
+         "code":"A.",
+         "mainActivity":8.6031396783E9,
+         "economicActivity":1.00475413709E9,
+         "mainActivityPrev":1.232743269034E10,
+         "economicActivityPrev":1.78342113717E9,
+         "synAccount":"-",
+         "lineNumber":0
+      },
+      {
+         "name":"Náklady z cinnosti",
+         "code":"A.I.",
+         "mainActivity":5.35109659075E9,
+         "economicActivity":1.00157893994E9,
+         "mainActivityPrev":6.72537331542E9,
+         "economicActivityPrev":1.62264469772E9,
+         "synAccount":"-",
+         "lineNumber":0
+      },
+      {
+         "name":"Spotreba materiálu",
+         "code":"A.I.1.",
+         "mainActivity":4.078790396E7,
+         "economicActivity":3.177499662E7,
+         "mainActivityPrev":6.80919281E7,
+         "economicActivityPrev":3.875786442E7,
+         "synAccount":"501",
+         "lineNumber":0
+      },
+      {
+         "name":"Spotreba energie",
+         "code":"A.I.2.",
+         "mainActivity":3.83373072E7,
+         "economicActivity":5384784.89,
+         "mainActivityPrev":6.249979513E7,
+         "economicActivityPrev":8788157.36,
+         "synAccount":"502",
+         "lineNumber":0
+      },
+      {
+         "name":"Spotreba jiných neskladovatelných dodávek",
+         "code":"A.I.3.",
+         "mainActivity":0.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":0.0,
+         "economicActivityPrev":0.0,
+         "synAccount":"503",
+         "lineNumber":0
+      },
+      {
+         "name":"Prodané zboží",
+         "code":"A.I.4.",
+         "mainActivity":26318.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":10696.0,
+         "economicActivityPrev":809693.7,
+         "synAccount":"504",
+         "lineNumber":0
+      },
+      {
+         "name":"Aktivace dlouhodobého majetku",
+         "code":"A.I.5.",
+         "mainActivity":0.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":-86707.0,
+         "economicActivityPrev":0.0,
+         "synAccount":"506",
+         "lineNumber":0
+      },
+      {
+         "name":"Aktivace obežného majetku",
+         "code":"A.I.6.",
+         "mainActivity":0.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":0.0,
+         "economicActivityPrev":0.0,
+         "synAccount":"507",
+         "lineNumber":0
+      },
+      {
+         "name":"Zmena stavu zásob vlastní výroby",
+         "code":"A.I.7.",
+         "mainActivity":0.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":0.0,
+         "economicActivityPrev":0.0,
+         "synAccount":"508",
+         "lineNumber":0
+      },
+      {
+         "name":"Opravy a udržování",
+         "code":"A.I.8.",
+         "mainActivity":4.4577917581E8,
+         "economicActivity":2.6715167765E8,
+         "mainActivityPrev":6.5029340845E8,
+         "economicActivityPrev":5.0864561145E8,
+         "synAccount":"511",
+         "lineNumber":0
+      },
+      {
+         "name":"Cestovné",
+         "code":"A.I.9.",
+         "mainActivity":7293499.67,
+         "economicActivity":14390.0,
+         "mainActivityPrev":8713857.28,
+         "economicActivityPrev":15611.0,
+         "synAccount":"512",
+         "lineNumber":0
+      },
+      {
+         "name":"Náklady na reprezentaci",
+         "code":"A.I.10.",
+         "mainActivity":5535979.81,
+         "economicActivity":6808.0,
+         "mainActivityPrev":8678106.26,
+         "economicActivityPrev":8818.0,
+         "synAccount":"513",
+         "lineNumber":0
+      },
+      {
+         "name":"Aktivace vnitroorganizacních služeb",
+         "code":"A.I.11.",
+         "mainActivity":0.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":0.0,
+         "economicActivityPrev":0.0,
+         "synAccount":"516",
+         "lineNumber":0
+      },
+      {
+         "name":"Ostatní služby",
+         "code":"A.I.12.",
+         "mainActivity":1.15362759935E9,
+         "economicActivity":1.2338110721E8,
+         "mainActivityPrev":1.61538334527E9,
+         "economicActivityPrev":1.8251190651E8,
+         "synAccount":"518",
+         "lineNumber":0
+      },
+      {
+         "name":"Mzdové náklady",
+         "code":"A.I.13.",
+         "mainActivity":1.15434117643E9,
+         "economicActivity":5.70466744E7,
+         "mainActivityPrev":1.45673957925E9,
+         "economicActivityPrev":7.08214579E7,
+         "synAccount":"521",
+         "lineNumber":0
+      },
+      {
+         "name":"Zákonné sociální pojištení",
+         "code":"A.I.14.",
+         "mainActivity":3.7300893807E8,
+         "economicActivity":1.88985292E7,
+         "mainActivityPrev":4.6831373872E8,
+         "economicActivityPrev":2.39212836E7,
+         "synAccount":"524",
+         "lineNumber":0
+      },
+      {
+         "name":"Jiné sociální pojištení",
+         "code":"A.I.15.",
+         "mainActivity":4049572.68,
+         "economicActivity":31510.0,
+         "mainActivityPrev":5157945.49,
+         "economicActivityPrev":51259.0,
+         "synAccount":"525",
+         "lineNumber":0
+      },
+      {
+         "name":"Zákonné sociální náklady",
+         "code":"A.I.16.",
+         "mainActivity":9782523.06,
+         "economicActivity":119772.0,
+         "mainActivityPrev":9515881.85,
+         "economicActivityPrev":163059.0,
+         "synAccount":"527",
+         "lineNumber":0
+      },
+      {
+         "name":"Jiné sociální náklady",
+         "code":"A.I.17.",
+         "mainActivity":2.453974175E7,
+         "economicActivity":595434.0,
+         "mainActivityPrev":2.90840307E7,
+         "economicActivityPrev":707225.0,
+         "synAccount":"528",
+         "lineNumber":0
+      },
+      {
+         "name":"Dan silnicní",
+         "code":"A.I.18.",
+         "mainActivity":0.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":0.0,
+         "economicActivityPrev":0.0,
+         "synAccount":"531",
+         "lineNumber":0
+      },
+      {
+         "name":"Dan z nemovitostí",
+         "code":"A.I.19.",
+         "mainActivity":636118.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":1262551.0,
+         "economicActivityPrev":0.0,
+         "synAccount":"532",
+         "lineNumber":0
+      },
+      {
+         "name":"Jiné dane a poplatky",
+         "code":"A.I.20.",
+         "mainActivity":602054.0,
+         "economicActivity":1713977.5,
+         "mainActivityPrev":2312048.0,
+         "economicActivityPrev":2365847.5,
+         "synAccount":"538",
+         "lineNumber":0
+      },
+      {
+         "name":"Smluvní pokuty a úroky z prodlení",
+         "code":"A.I.22.",
+         "mainActivity":100126.03,
+         "economicActivity":254246.85,
+         "mainActivityPrev":44868.75,
+         "economicActivityPrev":448582.0,
+         "synAccount":"541",
+         "lineNumber":0
+      },
+      {
+         "name":"Jiné pokuty a penále",
+         "code":"A.I.23.",
+         "mainActivity":223902.05,
+         "economicActivity":352100.0,
+         "mainActivityPrev":2433472.0,
+         "economicActivityPrev":2286.0,
+         "synAccount":"542",
+         "lineNumber":0
+      },
+      {
+         "name":"Dary a jiná bezúplatná predání",
+         "code":"A.I.24.",
+         "mainActivity":2887947.38,
+         "economicActivity":0.0,
+         "mainActivityPrev":4599516.51,
+         "economicActivityPrev":7500.0,
+         "synAccount":"543",
+         "lineNumber":0
+      },
+      {
+         "name":"Prodaný materiál",
+         "code":"A.I.25.",
+         "mainActivity":0.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":0.0,
+         "economicActivityPrev":0.0,
+         "synAccount":"544",
+         "lineNumber":0
+      },
+      {
+         "name":"Manka a škody",
+         "code":"A.I.26.",
+         "mainActivity":2943196.14,
+         "economicActivity":15000.0,
+         "mainActivityPrev":352404.0,
+         "economicActivityPrev":8000.0,
+         "synAccount":"547",
+         "lineNumber":0
+      },
+      {
+         "name":"Tvorba fondu",
+         "code":"A.I.27.",
+         "mainActivity":1.48068715406E9,
+         "economicActivity":0.0,
+         "mainActivityPrev":1.46724304084E9,
+         "economicActivityPrev":0.0,
+         "synAccount":"548",
+         "lineNumber":0
+      },
+      {
+         "name":"Odpisy dlouhodobého majetku",
+         "code":"A.I.28.",
+         "mainActivity":4.7687735974E8,
+         "economicActivity":4.792462337E8,
+         "mainActivityPrev":6.5678547055E8,
+         "economicActivityPrev":6.458178144E8,
+         "synAccount":"551",
+         "lineNumber":0
+      },
+      {
+         "name":"Prodaný dlouhodobý nehmotný majetek",
+         "code":"A.I.29.",
+         "mainActivity":0.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":0.0,
+         "economicActivityPrev":0.0,
+         "synAccount":"552",
+         "lineNumber":0
+      },
+      {
+         "name":"Prodaný dlouhodobý hmotný majetek",
+         "code":"A.I.30.",
+         "mainActivity":6.49038663E7,
+         "economicActivity":0.0,
+         "mainActivityPrev":8.166460734E7,
+         "economicActivityPrev":225650.0,
+         "synAccount":"553",
+         "lineNumber":0
+      },
+      {
+         "name":"Prodané pozemky",
+         "code":"A.I.31.",
+         "mainActivity":6284810.38,
+         "economicActivity":2508822.19,
+         "mainActivityPrev":2.355371683E7,
+         "economicActivityPrev":3.164565483E7,
+         "synAccount":"554",
+         "lineNumber":0
+      },
+      {
+         "name":"Tvorba a zúctování rezerv",
+         "code":"A.I.32.",
+         "mainActivity":0.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":268685.0,
+         "economicActivityPrev":0.0,
+         "synAccount":"555",
+         "lineNumber":0
+      },
+      {
+         "name":"Tvorba a zúctování opravných položek",
+         "code":"A.I.33.",
+         "mainActivity":-7313305.32,
+         "economicActivity":-309031.66,
+         "mainActivityPrev":1663245.1,
+         "economicActivityPrev":8.674398323E7,
+         "synAccount":"556",
+         "lineNumber":0
+      },
+      {
+         "name":"Náklady z vyrazených pohledávek",
+         "code":"A.I.34.",
+         "mainActivity":1.427452283E7,
+         "economicActivity":6649003.81,
+         "mainActivityPrev":3.055177672E7,
+         "economicActivityPrev":3252408.41,
+         "synAccount":"557",
+         "lineNumber":0
+      },
+      {
+         "name":"Náklady z drobného dlouhodobého majetku",
+         "code":"A.I.35.",
+         "mainActivity":3.592010762E7,
+         "economicActivity":588474.87,
+         "mainActivityPrev":4.42982055E7,
+         "economicActivityPrev":610926.39,
+         "synAccount":"558",
+         "lineNumber":0
+      },
+      {
+         "name":"Ostatní náklady z cinnosti",
+         "code":"A.I.36.",
+         "mainActivity":1.495899575E7,
+         "economicActivity":6154428.71,
+         "mainActivityPrev":2.594410178E7,
+         "economicActivityPrev":1.631409802E7,
+         "synAccount":"549",
+         "lineNumber":0
+      },
+      {
+         "name":"Financní náklady",
+         "code":"A.II.",
+         "mainActivity":5.002063455E7,
+         "economicActivity":28036.15,
+         "mainActivityPrev":6.737456471E7,
+         "economicActivityPrev":79649.45,
+         "synAccount":"-",
+         "lineNumber":0
+      },
+      {
+         "name":"Prodané cenné papíry a podíly",
+         "code":"A.II.1.",
+         "mainActivity":0.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":0.0,
+         "economicActivityPrev":0.0,
+         "synAccount":"561",
+         "lineNumber":0
+      },
+      {
+         "name":"Úroky",
+         "code":"A.II.2.",
+         "mainActivity":3.998269712E7,
+         "economicActivity":28036.15,
+         "mainActivityPrev":3.133876039E7,
+         "economicActivityPrev":77729.45,
+         "synAccount":"562",
+         "lineNumber":0
+      },
+      {
+         "name":"Kurzové ztráty",
+         "code":"A.II.3.",
+         "mainActivity":122372.37,
+         "economicActivity":0.0,
+         "mainActivityPrev":322949.37,
+         "economicActivityPrev":0.0,
+         "synAccount":"563",
+         "lineNumber":0
+      },
+      {
+         "name":"Náklady z precenení reálnou hodnotou",
+         "code":"A.II.4.",
+         "mainActivity":0.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":7124152.87,
+         "economicActivityPrev":0.0,
+         "synAccount":"564",
+         "lineNumber":0
+      },
+      {
+         "name":"Ostatní financní náklady",
+         "code":"A.II.5.",
+         "mainActivity":9915565.06,
+         "economicActivity":0.0,
+         "mainActivityPrev":2.858870208E7,
+         "economicActivityPrev":1920.0,
+         "synAccount":"569",
+         "lineNumber":0
+      },
+      {
+         "name":"Náklady na transfery",
+         "code":"A.III.",
+         "mainActivity":3.188882946E9,
+         "economicActivity":-196000.0,
+         "mainActivityPrev":5.35779569021E9,
+         "economicActivityPrev":-4621000.0,
+         "synAccount":"-",
+         "lineNumber":0
+      },
+      {
+         "name":"Náklady vybraných místních vládních institucí na transfery",
+         "code":"A.III.2.",
+         "mainActivity":3.188882946E9,
+         "economicActivity":-196000.0,
+         "mainActivityPrev":5.35779569021E9,
+         "economicActivityPrev":-4621000.0,
+         "synAccount":"572",
+         "lineNumber":0
+      },
+      {
+         "name":"Dan z príjmu",
+         "code":"A.V.",
+         "mainActivity":1.3139507E7,
+         "economicActivity":3343161.0,
+         "mainActivityPrev":1.7688912E8,
+         "economicActivityPrev":1.6531779E8,
+         "synAccount":"-",
+         "lineNumber":0
+      },
+      {
+         "name":"Dan z príjmu",
+         "code":"A.V.1.",
+         "mainActivity":1.3139507E7,
+         "economicActivity":3343161.0,
+         "mainActivityPrev":1.7688912E8,
+         "economicActivityPrev":1.6531779E8,
+         "synAccount":"591",
+         "lineNumber":0
+      },
+      {
+         "name":"Dodatecné odvody dane z príjmu",
+         "code":"A.V.2.",
+         "mainActivity":0.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":0.0,
+         "economicActivityPrev":0.0,
+         "synAccount":"595",
+         "lineNumber":0
+      }
+   ],
+   "revenues":[
+      {
+         "name":"VÝNOSY CELKEM",
+         "code":"B.",
+         "mainActivity":1.160883985309E10,
+         "economicActivity":1.75061262657E9,
+         "mainActivityPrev":1.475137581354E10,
+         "economicActivityPrev":2.54592486814E9,
+         "synAccount":"-",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy z cinnosti",
+         "code":"B.I.",
+         "mainActivity":2.80996890502E9,
+         "economicActivity":1.71797805562E9,
+         "mainActivityPrev":3.5121269538E9,
+         "economicActivityPrev":2.48481608337E9,
+         "synAccount":"-",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy z prodeje vlastních výrobku",
+         "code":"B.I.1.",
+         "mainActivity":3442.27,
+         "economicActivity":265948.29,
+         "mainActivityPrev":74697.1,
+         "economicActivityPrev":214272.56,
+         "synAccount":"601",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy z prodeje služeb",
+         "code":"B.I.2.",
+         "mainActivity":7.917092516E7,
+         "economicActivity":5.789895359E7,
+         "mainActivityPrev":1.0948864475E8,
+         "economicActivityPrev":8.784135152E7,
+         "synAccount":"602",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy z pronájmu",
+         "code":"B.I.3.",
+         "mainActivity":1.9501204264E8,
+         "economicActivity":1.59179800296E9,
+         "mainActivityPrev":2.6262895535E8,
+         "economicActivityPrev":2.11574722557E9,
+         "synAccount":"603",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy z prodaného zboží",
+         "code":"B.I.4.",
+         "mainActivity":23933.26,
+         "economicActivity":0.0,
+         "mainActivityPrev":56947.55,
+         "economicActivityPrev":212897.13,
+         "synAccount":"604",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy ze správních poplatku",
+         "code":"B.I.5.",
+         "mainActivity":7.057330861E7,
+         "economicActivity":0.0,
+         "mainActivityPrev":9.442230511E7,
+         "economicActivityPrev":0.0,
+         "synAccount":"605",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy z místních poplatku",
+         "code":"B.I.6.",
+         "mainActivity":3.2804750067E8,
+         "economicActivity":0.0,
+         "mainActivityPrev":3.4864919438E8,
+         "economicActivityPrev":0.0,
+         "synAccount":"606",
+         "lineNumber":0
+      },
+      {
+         "name":"Jiné výnosy z vlastních výkonu",
+         "code":"B.I.8.",
+         "mainActivity":3625872.1,
+         "economicActivity":3150.0,
+         "mainActivityPrev":4461637.85,
+         "economicActivityPrev":0.0,
+         "synAccount":"609",
+         "lineNumber":0
+      },
+      {
+         "name":"Smluvní pokuty a úroky z prodlení",
+         "code":"B.I.9.",
+         "mainActivity":2.425795206E7,
+         "economicActivity":6415311.93,
+         "mainActivityPrev":1.567101808E7,
+         "economicActivityPrev":8.214876598E7,
+         "synAccount":"641",
+         "lineNumber":0
+      },
+      {
+         "name":"Jiné pokuty a penále",
+         "code":"B.I.10.",
+         "mainActivity":5.13354222E7,
+         "economicActivity":7133.84,
+         "mainActivityPrev":6.9471413E7,
+         "economicActivityPrev":0.0,
+         "synAccount":"642",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy z vyrazených pohledávek",
+         "code":"B.I.11.",
+         "mainActivity":162572.55,
+         "economicActivity":494270.3,
+         "mainActivityPrev":152840.54,
+         "economicActivityPrev":553358.43,
+         "synAccount":"643",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy z prodeje materiálu",
+         "code":"B.I.12.",
+         "mainActivity":302398.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":655942.87,
+         "economicActivityPrev":0.0,
+         "synAccount":"644",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy z prodeje dlouhodobého nehmotného majetku",
+         "code":"B.I.13.",
+         "mainActivity":0.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":0.0,
+         "economicActivityPrev":0.0,
+         "synAccount":"645",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy z prodeje dlouhodobého hmotného majetku krome pozemku",
+         "code":"B.I.14.",
+         "mainActivity":9.831588995E7,
+         "economicActivity":249024.59,
+         "mainActivityPrev":1.95937951E8,
+         "economicActivityPrev":517851.22,
+         "synAccount":"646",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy z prodeje pozemku",
+         "code":"B.I.15.",
+         "mainActivity":7.370363618E7,
+         "economicActivity":5.693757843E7,
+         "mainActivityPrev":2.0780953E8,
+         "economicActivityPrev":1.8609928731E8,
+         "synAccount":"647",
+         "lineNumber":0
+      },
+      {
+         "name":"Cerpání fondu",
+         "code":"B.I.16.",
+         "mainActivity":1.82314893081E9,
+         "economicActivity":0.0,
+         "mainActivityPrev":2.11326257664E9,
+         "economicActivityPrev":0.0,
+         "synAccount":"648",
+         "lineNumber":0
+      },
+      {
+         "name":"Ostatní výnosy z cinnosti",
+         "code":"B.I.17.",
+         "mainActivity":6.228507856E7,
+         "economicActivity":3908681.69,
+         "mainActivityPrev":8.938329958E7,
+         "economicActivityPrev":1.148107365E7,
+         "synAccount":"649",
+         "lineNumber":0
+      },
+      {
+         "name":"Financní výnosy",
+         "code":"B.II.",
+         "mainActivity":1.5514416981E8,
+         "economicActivity":2469424.41,
+         "mainActivityPrev":2.3119934754E8,
+         "economicActivityPrev":4689112.39,
+         "synAccount":"-",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy z prodeje cenných papíru a podílu",
+         "code":"B.II.1.",
+         "mainActivity":0.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":0.0,
+         "economicActivityPrev":0.0,
+         "synAccount":"661",
+         "lineNumber":0
+      },
+      {
+         "name":"Úroky",
+         "code":"B.II.2.",
+         "mainActivity":4.598618097E7,
+         "economicActivity":2469424.41,
+         "mainActivityPrev":1.397494332E7,
+         "economicActivityPrev":769854.97,
+         "synAccount":"662",
+         "lineNumber":0
+      },
+      {
+         "name":"Kurzové zisky",
+         "code":"B.II.3.",
+         "mainActivity":3729.87,
+         "economicActivity":0.0,
+         "mainActivityPrev":22884.72,
+         "economicActivityPrev":0.0,
+         "synAccount":"663",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy z precenení reálnou hodnotou",
+         "code":"B.II.4.",
+         "mainActivity":5.048560856E7,
+         "economicActivity":0.0,
+         "mainActivityPrev":8.157595587E7,
+         "economicActivityPrev":3919257.42,
+         "synAccount":"664",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy z dlouhodobého financního majetku",
+         "code":"B.II.5.",
+         "mainActivity":5.862333411E7,
+         "economicActivity":0.0,
+         "mainActivityPrev":1.3561619313E8,
+         "economicActivityPrev":0.0,
+         "synAccount":"665",
+         "lineNumber":0
+      },
+      {
+         "name":"Ostatní financní výnosy",
+         "code":"B.II.6.",
+         "mainActivity":45316.3,
+         "economicActivity":0.0,
+         "mainActivityPrev":9370.5,
+         "economicActivityPrev":0.0,
+         "synAccount":"669",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy z transferu",
+         "code":"B.IV.",
+         "mainActivity":5.0049482022E8,
+         "economicActivity":3.016514654E7,
+         "mainActivityPrev":8.4326440681E8,
+         "economicActivityPrev":5.641967238E7,
+         "synAccount":"-",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy vybraných místních vládních institucí z transferu",
+         "code":"B.IV.2.",
+         "mainActivity":5.0049482022E8,
+         "economicActivity":3.016514654E7,
+         "mainActivityPrev":8.4326440681E8,
+         "economicActivityPrev":5.641967238E7,
+         "synAccount":"672",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy ze sdílených daní a poplatku",
+         "code":"B.V.",
+         "mainActivity":8.14323195804E9,
+         "economicActivity":0.0,
+         "mainActivityPrev":1.016478510539E10,
+         "economicActivityPrev":0.0,
+         "synAccount":"-",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy ze sdílené dane z príjmu fyzických osob",
+         "code":"B.V.1.",
+         "mainActivity":2.22502440991E9,
+         "economicActivity":0.0,
+         "mainActivityPrev":2.71896641851E9,
+         "economicActivityPrev":0.0,
+         "synAccount":"681",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy ze sdílené dane z príjmu právnických osob",
+         "code":"B.V.2.",
+         "mainActivity":2.00618038594E9,
+         "economicActivity":0.0,
+         "mainActivityPrev":2.29783889062E9,
+         "economicActivityPrev":0.0,
+         "synAccount":"682",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy ze sdílené dane z pridané hodnoty",
+         "code":"B.V.3.",
+         "mainActivity":3.66872825362E9,
+         "economicActivity":0.0,
+         "mainActivityPrev":4.83814516551E9,
+         "economicActivityPrev":0.0,
+         "synAccount":"684",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy ze sdílených spotrebních daní",
+         "code":"B.V.4.",
+         "mainActivity":0.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":0.0,
+         "economicActivityPrev":0.0,
+         "synAccount":"685",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy ze sdílených majetkových daní",
+         "code":"B.V.5.",
+         "mainActivity":1.9465457682E8,
+         "economicActivity":0.0,
+         "mainActivityPrev":2.4612549709E8,
+         "economicActivityPrev":0.0,
+         "synAccount":"686",
+         "lineNumber":0
+      },
+      {
+         "name":"Výnosy z ostatních sdílených daní a poplatku",
+         "code":"B.V.6.",
+         "mainActivity":4.864433175E7,
+         "economicActivity":0.0,
+         "mainActivityPrev":6.370913366E7,
+         "economicActivityPrev":0.0,
+         "synAccount":"688",
+         "lineNumber":0
+      },
+      {
+         "name":"VÝSLEDEK HOSPODARENÍ",
+         "code":"C.",
+         "mainActivity":0.0,
+         "economicActivity":0.0,
+         "mainActivityPrev":0.0,
+         "economicActivityPrev":0.0,
+         "synAccount":"-",
+         "lineNumber":0
+      },
+      {
+         "name":"Výsledek hospodarení pred zdanením",
+         "code":"C.1.",
+         "mainActivity":3.01883968179E9,
+         "economicActivity":7.4920165048E8,
+         "mainActivityPrev":2.6008322432E9,
+         "economicActivityPrev":9.2782152097E8,
+         "synAccount":"-",
+         "lineNumber":0
+      },
+      {
+         "name":"Výsledek hospodarení bežného úcetního období",
+         "code":"C.2.",
+         "mainActivity":3.00570017479E9,
+         "economicActivity":7.4585848948E8,
+         "mainActivityPrev":2.4239431232E9,
+         "economicActivityPrev":7.6250373097E8,
+         "synAccount":"-",
+         "lineNumber":0
+      }
+   ]
+}

@@ -2,6 +2,7 @@ package cz.gov.monitor.mfcr.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
+import org.hibernate.annotations.DiscriminatorOptions;
 
 import javax.persistence.*;
 
@@ -12,10 +13,11 @@ import javax.persistence.*;
 @Table(name="balance_statement")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(
-//        discriminatorType = DiscriminatorType.INTEGER,
-        name = "statement_type"
-//        , columnDefinition = "TINYINT(1)"
+        discriminatorType = DiscriminatorType.INTEGER
+        , name = "statement_type"
+        , columnDefinition = "TINYINT(1)"
 )
+@DiscriminatorOptions(force = true)
 public class BalanceStatement {
     /**
      * DB Id
@@ -55,7 +57,7 @@ public class BalanceStatement {
     @Column(name="line_number")
     private String lineNumber; //":0
 
-    @ManyToOne(optional=false)
+    @ManyToOne(optional=false, fetch = FetchType.LAZY)
     @JoinColumn(name="report_id",referencedColumnName="id")
     @JsonIgnore
     @ToString.Exclude

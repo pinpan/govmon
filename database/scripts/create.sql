@@ -10,7 +10,10 @@ CREATE TABLE balance_statement \
 (                    \
 id             INT AUTO_INCREMENT, \
 statement_type         varchar(50), \
+statement_type_id      integer,      \
 name                   varchar(255), \
+dummy_integer          integer,      \
+dummy_string           varchar(255), \
 code                   varchar(255), \
 main_activity          varchar(255), \
 economic_activity      varchar(255), \
