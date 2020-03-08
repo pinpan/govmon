@@ -2,9 +2,11 @@ package cz.gov.monitor.mfcr.service;
 
 import cz.gov.monitor.mfcr.dao.BalanceStatementDao;
 import cz.gov.monitor.mfcr.dao.FinancialReportDao;
+import cz.gov.monitor.mfcr.dao.FiscalPeriodDao;
 import cz.gov.monitor.mfcr.dao.OrganizationDao;
 import cz.gov.monitor.mfcr.model.BalanceStatement;
 import cz.gov.monitor.mfcr.model.FinancialReport;
+import cz.gov.monitor.mfcr.model.FiscalPeriod;
 import cz.gov.monitor.mfcr.model.Organization;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,10 +27,19 @@ public class MfcrMonitorDBService {
     private BalanceStatementDao balanceStatementDao;
 
 
+    @Autowired
+    private FiscalPeriodDao fiscalPeriodDao;
+
+
     public Optional<FinancialReport> findReportByQuery(String ico, String period) {
         FinancialReport report = reportDao.findReportByQuery(ico, period);
         return Optional.ofNullable(report);
     }
+
+    public Iterable<FiscalPeriod> fetchAlFiscalPeriods() {
+        return fiscalPeriodDao.findAll();
+    }
+
 
     public Iterable<FinancialReport> fetchAllReports() {
         return reportDao.findAll();

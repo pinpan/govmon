@@ -1,38 +1,31 @@
 package cz.gov.monitor.mfcr.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
-@Data
+import javax.persistence.*;
+
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name="fiscal_period")
 public class FiscalPeriod {
 
-    /*
-      "year":2029,
-      "loadID":2912,
-      "month":"prosinec",
-      "isQuarter":true,
-      "isYear":true,
-      "balanceSheetProfitLoss":false,
-      "cashFlowEquityCapital":false,
-      "finM":false,
-      "finU":false,
-      "statementsAfterCorrections":false,
-      "clearanceOfAccounts":false,
-      "finSPO":false,
-      "monitoring":false,
-      "budgetApproved":false,
-      "budgetPreparation":false,
-      "ucjed":false,
-      "transactionData":false,
-      "label":"12. 2029"
-     */
 
-    private Integer year;                       // 2029,
-    private Integer  loadID;                    // 2912,
-    private String  month;                      // "prosinec",
+    /**
+     * Internal DB ID
+     */
+    @javax.persistence.Id
+    @Column(name="id")
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @JsonIgnore
+    private Long id;
+
+    private Integer fiscal_year;                // 2029,
+    private Integer loadID;                     // 2912,
+    private String  fiscal_month;               // "prosinec",
     private boolean isQuarter;                  // true,
     private boolean isYear;                     // true,
     private boolean balanceSheetProfitLoss;     // false,

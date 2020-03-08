@@ -123,6 +123,11 @@ public class MfcrMonitorController {
                 String[] segmentsEnd = parts[1].split("\\.");
                 Integer segmentEnd = Integer.valueOf(segmentsEnd[2]);
 
+                StringBuilder aBuilder = new StringBuilder();
+                aBuilder.append(segmentsStart[0]).append(".");
+                values.add(aBuilder.toString());
+                values.add(aBuilder.append(segmentsStart[1]).append(".").toString());
+
                 for (int n=segmentStart; n<=segmentEnd; n++) {
                     String valueN = new StringBuilder()
                                     .append(segmentsStart[0]).append(".")
@@ -167,11 +172,18 @@ public class MfcrMonitorController {
     @ApiResponses( value = {
             @ApiResponse(code = 200, message = "A list of fiscal periods information.")
     })
-    public List<FiscalPeriod> getFiscalPEriods() {
-        // TODO: Get from DB firs
-        List<FiscalPeriod> fiscalPEriods = mfcrMonitorRESTService.getFiscalPeriods();
+    public List<FiscalPeriod> getFiscalPeriods() {
+        Iterable<FiscalPeriod> fiscalPeriods =  mfcrMonitorDBService.fetchAlFiscalPeriods();
+        //If not found in the DB, Get from Rest and save to DB
+        if (fiscalPeriods == null) {
+            fiscalPeriods = mfcrMonitorRESTService.getFiscalPeriods();
+        }
 
-        return fiscalPEriods;
+        List<FiscalPeriod> result = new ArrayList<>();
+        fiscalPeriods.forEach( p -> {
+            result.add(p);
+        });
+        return result;
     }
 
     private Organization getOrganization(@RequestParam(value = "ico", defaultValue = "00123456") String ico) {

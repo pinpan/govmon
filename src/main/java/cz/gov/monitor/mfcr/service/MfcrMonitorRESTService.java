@@ -112,8 +112,4 @@ public class MfcrMonitorRESTService {
 
         return restClient.fetchResourcesList(serviceUrl, httpEntity, fiscalPeriodsListTypeRef);
     }
-
-    /*public Map<Integer, FinancialReport> fetchOrganizatzionReports(String ico) {
-        return null;
-    }*/
 }
