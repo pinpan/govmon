@@ -6,25 +6,8 @@ CREATE USER 'moni'@'%' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON govmon.* TO 'moni'@'localhost' WITH GRANT OPTION;
 GRANT ALL PRIVILEGES ON govmon.* TO 'moni'@'%' WITH GRANT OPTION;
 
-CREATE TABLE balance_statement \
-(                    \
-    id             INT AUTO_INCREMENT, \
-    statement_type         varchar(50), \
-    statement_type_id      integer,      \
-    name                   varchar(255), \
-    dummy_integer          integer,      \
-    dummy_string           varchar(255), \
-    code                   varchar(255), \
-    main_activity          varchar(255), \
-    economic_activity      varchar(255), \
-    main_activity_prev     varchar(255), \
-    economic_activity_prev varchar(255), \
-    syn_account            varchar(255), \
-    line_number            varchar(255), \
-    report_id              long,         \
-    PRIMARY KEY (id)                     \
-) ENGINE = InnoDB;
 
+DROP TABLE IF EXISTS organization_type;
 CREATE TABLE organization_type \
 (                              \
     id             INTEGER AUTO_INCREMENT, \
@@ -36,6 +19,7 @@ insert into organization_type (type, area) values ("4", "Obec");
 insert into organization_type (type, area) values ("1", "Urad");
 
 
+DROP TABLE IF EXISTS fiscal_period;
 CREATE TABLE fiscal_period  \
 (                         \
     id             INT AUTO_INCREMENT, \
@@ -61,7 +45,28 @@ CREATE TABLE fiscal_period  \
 ) ENGINE = InnoDB;
 
 
+DROP TABLE IF EXISTS balance_statement;
+CREATE TABLE balance_statement \
+(                    \
+    id             INT AUTO_INCREMENT, \
+    statement_type         varchar(50), \
+    statement_type_id      integer,      \
+    name                   varchar(255), \
+    dummy_integer          integer,      \
+    dummy_string           varchar(255), \
+    code                   varchar(255), \
+    main_activity          varchar(255), \
+    economic_activity      varchar(255), \
+    main_activity_prev     varchar(255), \
+    economic_activity_prev varchar(255), \
+    syn_account            varchar(255), \
+    line_number            varchar(255), \
+    report_id              long,         \
+    PRIMARY KEY (id)                     \
+) ENGINE = InnoDB;
 
+
+DROP TABLE IF EXISTS organization;
 CREATE TABLE organization \
 (                         \
     id             INT AUTO_INCREMENT, \
@@ -78,6 +83,8 @@ CREATE TABLE organization \
 ) ENGINE = InnoDB;
 
 
+
+DROP TABLE IF EXISTS financial_report;
 CREATE TABLE financial_report \
 (                         \
     id             INT AUTO_INCREMENT, \
